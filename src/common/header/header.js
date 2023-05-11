@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Revel,userplaceholder } from "@/src/assets/img";
 import { searchIcon, Bars } from "@/src/assets/img/icons";
 import { useState } from "react";
-import SideBar from "./sidebar";
+import SideBar from "../sidebar/sidebar";
 
 const Header = () => {
   const [toggle, setToggle] = useState(false);
