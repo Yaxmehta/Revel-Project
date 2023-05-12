@@ -1,5 +1,4 @@
-import Logo from "../../assets/img/logo.svg";
-import loginimg from "../../assets/img/login-img.png";
+import {Logo,loginImg} from "../../assets/img";
 import Image from "next/image";
 import Link from "next/link";
 import { ROUTE_URL } from "@/src/constant/url";
@@ -50,7 +49,7 @@ const Login = () => {
                   </Link>
                 </div>
                 <Link
-                  href={ROUTE_URL.DASHBOARD}
+                  href={ROUTE_URL.MANAGETENANTS}
                   class="btn btn-primary btn-block mt-4 mb-5"
                 >
                   Login
@@ -63,7 +62,7 @@ const Login = () => {
             </div>
             <div class="col-12 col-md-6">
               <Image
-                src={loginimg}
+                src={loginImg}
                 alt="login-img"
                 className="img-fluid"
               ></Image>

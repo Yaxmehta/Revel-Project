@@ -8,5 +8,7 @@ export {default as pipelineIcon} from './pipelines.svg';
 export {default as datasetIcon} from './dataset.svg';
 export {default as analyticsIcon} from './analytics.svg';
 export {default as configIcon} from './configuration.svg';
+export {default as quotoneIcon} from './quotone.svg';
+export {default as rydotIcon} from './rydot.svg';
 
 
