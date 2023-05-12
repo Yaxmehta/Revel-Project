@@ -10,9 +10,15 @@ import {
   analyticsIcon,
   configIcon,
 } from "@/src/assets/img/icons";
+import { useState } from "react";
 
 const SideBar = (props) => {
   const { show } = props;
+  const [isShow, setIsShow] = useState(false);
+
+  const handleClick=()=>{
+    setIsShow(!isShow);
+  }
   return (
     <>
       <aside
@@ -210,6 +216,7 @@ const SideBar = (props) => {
               href="javascript:void(0)"
               data-toggle="collapse"
               data-target="#dropdown"
+              onClick={handleClick}
             >
               <div>
                 <Image
@@ -235,9 +242,9 @@ const SideBar = (props) => {
             </Link>
             <div
               id="dropdown"
-              className="collapse navbar-collapse has-dropdown"
+              className={`collapse has-dropdown navbar-collapse ${isShow ? "show" : ""}` } 
             >
-              <ul className="navbar-nav mr-auto">
+             <ul className="navbar-nav mr-auto">
                 <li className="nav-item">
                   <Link className="nav-link" href="javascript:void(0)">
                     User
