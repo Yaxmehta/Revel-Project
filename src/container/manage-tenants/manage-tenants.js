@@ -104,7 +104,7 @@ const ManageTenants = () => {
 
   return (
     <>
-      <Header />
+   
       <main class="main-content" id="main">
         <div className="container">
           <div className="row">
@@ -116,14 +116,6 @@ const ManageTenants = () => {
                     <p className="font-16 ">
                       You can add, edit and delete Tenant anytime.
                     </p>
-                  </div>
-                  <div className="text-center my-4">
-                    <button
-                      className="btn btn-success btn-lg min-width-150"
-                      onClick={showmoreitem}
-                    >
-                      Load More
-                    </button>
                   </div>
                   <div className="row data-lake-cards tenants">
                     {data.slice(0, visible).map((el) => {
@@ -257,6 +249,13 @@ const ManageTenants = () => {
                     >
                       Save
                     </Link>
+                    
+                    <button
+                      className="btn btn-success btn-lg min-width-150"
+                      onClick={showmoreitem}
+                    >
+                      Load More
+                    </button>
                   </div>
                 </div>
               </div>

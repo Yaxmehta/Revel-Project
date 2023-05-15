@@ -4,8 +4,12 @@ import { Revel,userplaceholder } from "@/src/assets/img";
 import { searchIcon, Bars } from "@/src/assets/img/icons";
 import { useState } from "react";
 import SideBar from "../sidebar/sidebar";
+import { useRouter } from "next/router";
+import { COMPONENT_TITLE } from "@/src/constant/titles";
 
-const Header = () => {
+const Header = (props) => {
+  const {title}= props;
+  const router = useRouter();
   const [toggle, setToggle] = useState(false);
   const [show, setShow] = useState(false);
 
@@ -79,8 +83,8 @@ const Header = () => {
               >
                 <Image src={Bars} alt="Toggle Sidebar" className="img-fluid" />
               </Link>
-              <li className="breadcrumb-item">Home</li>
-              <li className="breadcrumb-item active">Dashboard</li>
+              <li className="breadcrumb-item">{title}</li>
+              <li className="breadcrumb-item active">{COMPONENT_TITLE[router.pathname]}</li>
             </ol>
           </div>
         </nav>
