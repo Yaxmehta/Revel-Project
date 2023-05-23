@@ -3,14 +3,15 @@ import Image from "next/image";
 import Link from "next/link";
 import { ROUTE_URL } from "@/src/constant/url";
 const Login = () => {
+  
   return (
     <>
-      <div class="wrapper login-page">
-        <div class="container">
-          <div class="row h-100-vh align-items-center">
-            <div class="col-12 col-md-6">
-              <div class="login-form">
-                <div class="logo text-center">
+      <div className="wrapper login-page">
+        <div className="container">
+          <div className="row h-100-vh align-items-center">
+            <div className="col-12 col-md-6">
+              <div className="login-form">
+                <div className="logo text-center">
                   <Image
                     src={Logo}
                     alt="Revel"
@@ -18,49 +19,51 @@ const Login = () => {
                     width="280"
                   ></Image>
                 </div>
-                <div class="form-group label-inside">
-                  <div class="mb-2"> Email Address</div>
-                  <div class="icon-box">
-                    <i class="r-icon r-icon-mail"></i>
+                <div className="form-group label-inside">
+                  <div className="mb-2" htmlFor="email"> Email Address</div>
+                  <div className="icon-box">
+                    <i className="r-icon r-icon-mail"></i>
                   </div>
-                  <input type="text" class="form-control" id="email" />
+                  <input type="text" className="form-control" id="email" />
+                  
                 </div>
-                <div class="form-group label-inside">
-                  <div class="mb-2"> Password</div>
-                  <div class="icon-box">
-                    <i class="r-icon r-icon-lock1"></i>
+                <div className="form-group label-inside">
+                  <div className="mb-2" htmlFor="password"> Password</div>
+                  <div className="icon-box">
+                    <i className="r-icon r-icon-lock1"></i>
                   </div>
-                  <input type="password" class="form-control" id="password" />
+                  <input type="password" className="form-control" id="password" />
+                  
                 </div>
-                <div class="d-flex justyfy-content-between form-group my-3">
-                  <div class="custom-control custom-checkbox text-muted">
+                <div className="d-flex justyfy-content-between form-group my-3">
+                  <div className="custom-control custom-checkbox text-muted">
                     <input
                       type="checkbox"
-                      class="custom-control-input"
+                      className="custom-control-input"
                       id="remember_me"
                       name="example1"
                     />
-                    <label class="custom-control-label" for="remember_me">
+                    <label className="custom-control-label" for="remember_me">
                       Remember me
                     </label>
                   </div>
-                  <Link href="javascript:void(0)" class="d-block ml-auto">
+                  <Link href={ROUTE_URL.FORGOTPASSWORD} className="d-block ml-auto">
                     Forgot Password?
                   </Link>
                 </div>
                 <Link
-                  href={ROUTE_URL.MANAGETENANTS}
-                  class="btn btn-primary btn-block mt-4 mb-5"
+                  href={ROUTE_URL.TENANTS}
+                  className="btn btn-primary btn-block mt-4 mb-5"
                 >
                   Login
                 </Link>
-                <p class="text-center text-muted">
+                <p className="text-center text-muted">
                   Don't have an account?{" "}
                   <Link href="sign-up.html">Sign up</Link>
                 </p>
               </div>
             </div>
-            <div class="col-12 col-md-6">
+            <div className="col-12 col-md-6">
               <Image
                 src={loginImg}
                 alt="login-img"

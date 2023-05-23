@@ -1,13 +1,14 @@
-import Dashboard from "@/src/container/dashboard/dashboard";
 import PageHeader from "@/src/config/PageHeader";
 import { HEADER_TITLE ,NAVBAR_TITLE} from "@/src/constant/titles";
 import Header from "@/src/common/header/header";
+import Role_Management from "@/src/container/role/role-management";
+
 const Home=()=>{
     return (
         <>
-        <PageHeader title={NAVBAR_TITLE.DASHBOARD} />
+        <PageHeader title={NAVBAR_TITLE.ROLEMANAGEMENT} />
         <Header title={HEADER_TITLE.HOME}/>
-        <Dashboard/>
+        <Role_Management/>
         </>
     )
 }

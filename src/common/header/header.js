@@ -6,6 +6,7 @@ import { useState } from "react";
 import SideBar from "../sidebar/sidebar";
 import { useRouter } from "next/router";
 import { COMPONENT_TITLE } from "@/src/constant/titles";
+import { ROUTE_URL } from "@/src/constant/url";
 
 const Header = (props) => {
   const {title}= props;
@@ -58,7 +59,7 @@ const Header = (props) => {
                     </Link>
                   </li>
                   <li className="nav-item">
-                    <Link className="nav-link" href="javascript:void(0)">
+                    <Link className="nav-link" href={ROUTE_URL.USERPROFILE}>
                       <Image
                         src={userplaceholder}
                         alt="User Profile"

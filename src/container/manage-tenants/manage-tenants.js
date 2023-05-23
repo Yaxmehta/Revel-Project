@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Logo } from "../../assets/img";
 import { quotoneIcon, rydotIcon } from "../../assets/img/icons";
 import { useState } from "react";
+import { ROUTE_URL } from "@/src/constant/url";
 const ManageTenants = () => {
   const [visible, setVisible] = useState(7);
   const showmoreitem = () => {
@@ -104,7 +105,6 @@ const ManageTenants = () => {
 
   return (
     <>
-   
       <main class="main-content" id="main">
         <div className="container">
           <div className="row">
@@ -160,102 +160,28 @@ const ManageTenants = () => {
                       );
                     })}
 
-                    {/* <div className="col-12 col-md-3">
-                      <div className="card text text-center mb-0">
-                        <div className="icon">
-                          <Image
-                            src={quotoneIcon}
-                            alt="Quotone"
-                            className="img-fluid mx-auto"
-                            width="140"
-                          />
-                        </div>
-                        Quotone
-                        <div className="actions">
-                          <ul className="list-unstyled d-flex flex-row mb-0 justify-content-center">
-                            <li>
-                              <Link href="javascript:void(0)">
-                                <i className="r-icon r-icon-info-outline"></i>
-                              </Link>
-                            </li>
-                            <li>
-                              <Link href="javascript:void(0)">
-                                <i className="r-icon r-icon-pencil"></i>
-                              </Link>
-                            </li>
-                            <li>
-                              <Link
-                                href="javascript:void(0)"
-                                className="text-danger"
-                              >
-                                <i className="r-icon r-icon-delete"></i>
-                              </Link>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-
                     <div className="col-12 col-md-3">
-                      <div className="card text text-center mb-0">
-                        <div className="icon">
-                          <Image
-                            src={rydotIcon}
-                            alt="Rydot"
-                            className="img-fluid mx-auto"
-                            width="140"
-                          />
-                        </div>
-                        Rydot
-                        <div className="actions">
-                          <ul className="list-unstyled d-flex flex-row mb-0 justify-content-center">
-                            <li>
-                              <Link href="javascript:void(0)">
-                                <i className="r-icon r-icon-info-outline"></i>
-                              </Link>
-                            </li>
-                            <li>
-                              <Link href="javascript:void(0)">
-                                <i className="r-icon r-icon-pencil"></i>
-                              </Link>
-                            </li>
-                            <li>
-                              <Link
-                                href="javascript:void(0)"
-                                className="text-danger"
-                              >
-                                <i className="r-icon r-icon-delete"></i>
-                              </Link>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div> */}
-                    <div className="col-12 col-md-3">
-                      <label for="logo" className="upload-box card">
-                        <div className="inner-content">
-                          <div className="icon-box">
-                            <i className="r-icon r-icon-plus"></i>
+                      <Link href={ROUTE_URL.ADDTENANT}>
+                        <label htmlFor="logo" className="upload-box card">
+                          <div className="inner-content">
+                            <div className="icon-box">
+                              <i className="r-icon r-icon-plus"></i>
+                            </div>
+                            Add Tenant
                           </div>
-                          <span>Add Tenet</span>
-                        </div>
-                      </label>
+                        </label>
+                      </Link>
                     </div>
                   </div>
-                  <div className="text-center my-4">
-                    <Link
-                      href="javascript:void(0)"
-                      className="btn btn-primary btn-lg min-width-150"
-                    >
-                      Save
-                    </Link>
-                    
-                    <button
-                      className="btn btn-success btn-lg min-width-150"
-                      onClick={showmoreitem}
-                    >
-                      Load More
-                    </button>
+                  <div className="text-center my-4 ">
+                    <div className="d-flex justify-content-center my-3">
+                      <button
+                        className="btn btn-success btn-lg min-width-150"
+                        onClick={showmoreitem}
+                      >
+                        Load More
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>

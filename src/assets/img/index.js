@@ -1,6 +1,12 @@
 export  {default as Revel} from "./logo-white.svg";
 export  {default as userplaceholder} from "./user-placeholder.png";
- export  {default as Logo} from "./logo.svg";
- export  {default as loginImg} from "./login-img.png";
-
- 
+export  {default as Logo} from "./logo.svg";
+export  {default as loginImg} from "./login-img.png";
+export  {default as userProfileImg} from "./user-profile.png";
+export  {default as DashboardImg} from "./dashboard.png";
+export  {default as DatasetImg} from "./dataset.png";
+export  {default as SourceImg} from "./source.png";
+export  {default as DestinationImg} from "./destination.png";
+export  {default as PipelinesImg} from "./pipelines.png";
+export  {default as AnalyticsImg} from "./analytics.png";
+export  {default as ConfigurationImg} from "./configuration.png";

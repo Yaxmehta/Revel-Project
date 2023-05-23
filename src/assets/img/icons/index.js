@@ -1,14 +1,24 @@
-export {default as searchIcon} from './search.svg';
-export {default as Bars} from './bars.svg';
-export {default as homeIcon} from './home.svg';
-export {default as dashboardIcon} from './dashboard.svg';
-export {default as sourceIcon} from './source.svg';
-export {default as destinationIcon} from './destination.svg';
-export {default as pipelineIcon} from './pipelines.svg';
-export {default as datasetIcon} from './dataset.svg';
-export {default as analyticsIcon} from './analytics.svg';
-export {default as configIcon} from './configuration.svg';
-export {default as quotoneIcon} from './quotone.svg';
-export {default as rydotIcon} from './rydot.svg';
-
-
+export { default as searchIcon } from "./search.svg";
+export { default as Bars } from "./bars.svg";
+export { default as homeIcon } from "./home.svg";
+export { default as dashboardIcon } from "./dashboard.svg";
+export { default as sourceIcon } from "./source.svg";
+export { default as destinationIcon } from "./destination.svg";
+export { default as pipelineIcon } from "./pipelines.svg";
+export { default as datasetIcon } from "./dataset.svg";
+export { default as analyticsIcon } from "./analytics.svg";
+export { default as configIcon } from "./configuration.svg";
+export { default as quotoneIcon } from "./quotone.svg";
+export { default as rydotIcon } from "./rydot.svg";
+export { default as refreshIcon } from "./refresh.svg";
+export { default as plusIcon } from "./plus.svg";
+export { default as CSV_FileIcon } from "./csv-file.svg";
+export { default as MY_SQLIcon } from "./my-sql.svg";
+export { default as Mongo_Icon } from "./mongo-icon.svg";
+export { default as MongoDB_Icon } from "./mongodb.svg";
+export { default as SAP_Icon } from "./sap.svg";
+export { default as downloadIcon } from "./download.svg";
+export { default as importIcon } from "./import.svg";
+export { default as cancelIcon } from "./cancel.svg";
+export { default as closeIcon } from "./close.svg";
+export { default as BackArrowIcon } from "./back-arrow.svg";

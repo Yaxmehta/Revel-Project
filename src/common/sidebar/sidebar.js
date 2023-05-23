@@ -11,6 +11,7 @@ import {
   configIcon,
 } from "@/src/assets/img/icons";
 import { useState } from "react";
+import { ROUTE_URL } from "@/src/constant/url";
 
 const SideBar = (props) => {
   const { show } = props;
@@ -29,7 +30,7 @@ const SideBar = (props) => {
           <li className="nav-item">
             <Link
               className="nav-link active d-flex justify-content-between align-items-center"
-              href="javascript:void(0)"
+              href={ROUTE_URL.DASHBOARD}
             >
               <div>
                 <Image src={homeIcon} alt="Home" className="img-fluid" />
@@ -53,7 +54,7 @@ const SideBar = (props) => {
           <li className="nav-item">
             <Link
               className="nav-link d-flex justify-content-between align-items-center"
-              href="javascript:void(0)"
+              href={ROUTE_URL.DASHBOARD}
             >
               <div>
                 <Image
@@ -81,7 +82,7 @@ const SideBar = (props) => {
           <li className="nav-item">
             <Link
               className="nav-link d-flex justify-content-between align-items-center"
-              href="javascript:void(0)"
+              href={ROUTE_URL.SOURCE}
             >
               <div>
                 <Image src={sourceIcon} alt="Source" className="img-fluid" />
@@ -161,7 +162,7 @@ const SideBar = (props) => {
           <li className="nav-item">
             <Link
               className="nav-link d-flex justify-content-between align-items-center"
-              href="javascript:void(0)"
+              href={ROUTE_URL.DATASET}
             >
               <div>
                 <Image src={datasetIcon} alt="Dataset" className="img-fluid" />
@@ -246,17 +247,17 @@ const SideBar = (props) => {
             >
              <ul className="navbar-nav mr-auto">
                 <li className="nav-item">
-                  <Link className="nav-link" href="javascript:void(0)">
+                  <Link className="nav-link" href={ROUTE_URL.USERLIST}>
                     User
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" href="javascript:void(0)">
+                  <Link className="nav-link" href={ROUTE_URL.ROLEMANAGEMENT}>
                     Role
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" href="javascript:void(0)">
+                  <Link className="nav-link" href={ROUTE_URL.TENANTS}>
                     Tenant
                   </Link>
                 </li>
