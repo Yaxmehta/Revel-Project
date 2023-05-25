@@ -40,7 +40,7 @@ const Source = () => {
             </div>
             <div className="row px-2 align-items-center">
               <div className="col-12 col-md-6">
-                <p className="text-muted">03 Source found</p>
+                {/* <p className="text-muted">03 Source found</p> */}
               </div>
               <div className="col-12 col-md-6 text-right d-flex">
                 <Link

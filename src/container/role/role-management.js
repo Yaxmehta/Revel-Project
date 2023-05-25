@@ -32,7 +32,7 @@ const Role_Management = () => {
             </div>
             <div className="row px-2 align-items-center">
               <div className="col-12 col-md-6">
-                <p className="text-muted">Filtered to 2 people of 2</p>
+                {/* <p className="text-muted">Filtered to 2 people of 2</p> */}
               </div>
               <div className="col-12 col-md-6 text-right d-flex">
                 <Link
