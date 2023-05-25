@@ -1,7 +1,7 @@
 import { ROUTE_URL } from "@/src/constant/url";
 import Link from "next/link";
 
-const ForgotPassword = () => {
+const ChangePassword = () => {
   return (
     <>
       <div class="wrapper">
@@ -67,4 +67,4 @@ const ForgotPassword = () => {
     </>
   );
 };
-export default ForgotPassword;
+export default ChangePassword;

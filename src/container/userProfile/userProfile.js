@@ -21,7 +21,7 @@ const UserProfile = () => {
                       <Image src={refreshIcon} alt="Refresh" />
                     </Link>
                     <Link
-                      href={ROUTE_URL.FORGOTPASSWORD}
+                      href={ROUTE_URL.CHANGEPASSWORD}
                       className="btn mr-2 btn-outline-light"
                     >
                       CHANGE PASSWORD

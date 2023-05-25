@@ -7,7 +7,7 @@ export const ROUTE_URL = {
   ADDTENANT: "/tenants/addTenant",
 
   //Password
-  FORGOTPASSWORD: "/forgotPassword",
+  CHANGEPASSWORD: "/changePassword",
   
   //User
   USERPROFILE: "/userProfile",

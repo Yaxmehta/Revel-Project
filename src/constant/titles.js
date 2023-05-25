@@ -12,7 +12,7 @@ export const HEADER_TITLE = {
   ADDSOURCE: "AddSource",
 
   //Password
-  FORGOTPASSWORD: "ForgotPassword",
+  CHANGEPASSWORD: "ChangePassword",
 
   //User
   USERPROFILE: "UserProfile",
@@ -32,7 +32,7 @@ export const COMPONENT_TITLE = {
   "/tenants/addTenant": "AddTenant",
   
   //Password
-  "/forgotPassword": "ChangePassword",
+  "/changePassword": "ChangePassword",
 
   //User
   "/userProfile": "UserProfile",
@@ -62,7 +62,7 @@ export const NAVBAR_TITLE = {
   ADDSOURCE: "AddSource",
 
   //Password
-  FORGOTPASSWORD: "ForgotPassword",
+  CHANGEPASSWORD: "ChangePassword",
 
   //User
   USERPROFILE: "UserProfile",

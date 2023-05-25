@@ -47,7 +47,7 @@ const Login = () => {
                       Remember me
                     </label>
                   </div>
-                  <Link href={ROUTE_URL.FORGOTPASSWORD} className="d-block ml-auto">
+                  <Link href={ROUTE_URL.CHANGEPASSWORD} className="d-block ml-auto">
                     Forgot Password?
                   </Link>
                 </div>
