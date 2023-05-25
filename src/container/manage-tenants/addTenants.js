@@ -1,3 +1,4 @@
+import { ROUTE_URL } from "@/src/constant/url";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -274,7 +275,7 @@ const AddTenants = () => {
 
                         <div className="text-center my-4">
                           <Link
-                            href="javascript:void(0)"
+                            href={ROUTE_URL.TENANTS}
                             className="btn btn-primary btn-lg min-width-150"
                           >
                             Submit

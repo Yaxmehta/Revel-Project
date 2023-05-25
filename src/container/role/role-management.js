@@ -24,7 +24,7 @@ const Role_Management = () => {
                   <div className="buttons mt-3">
                     <Link href={ROUTE_URL.ADDROLE} className="btn mr-2 btn-primary">
                       <Image src={plusIcon} alt="Add" />
-                      Add User
+                      Add Role
                     </Link>
                   </div>
                 </div>

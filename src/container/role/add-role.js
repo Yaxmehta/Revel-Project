@@ -1,3 +1,4 @@
+import { ROUTE_URL } from "@/src/constant/url";
 import Link from "next/link";
 import { useState } from "react";
 import { Collapse } from "react-bootstrap";
@@ -530,7 +531,7 @@ const Add_Role = () => {
                     CANCEL
                   </Link>
                   <Link
-                    href="javascript:void(0)"
+                    href={ROUTE_URL.ROLEMANAGEMENT}
                     className="btn-lg btn  btn-primary min-width-150"
                   >
                     SAVE

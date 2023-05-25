@@ -30,7 +30,7 @@ const SideBar = (props) => {
           <li className="nav-item">
             <Link
               className="nav-link active d-flex justify-content-between align-items-center"
-              href={ROUTE_URL.DASHBOARD}
+              href={ROUTE_URL.TENANTS}
             >
               <div>
                 <Image src={homeIcon} alt="Home" className="img-fluid" />

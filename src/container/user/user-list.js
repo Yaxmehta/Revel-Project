@@ -1,4 +1,9 @@
-import { closeIcon, downloadIcon, importIcon, plusIcon } from "@/src/assets/img/icons";
+import {
+  closeIcon,
+  downloadIcon,
+  importIcon,
+  plusIcon,
+} from "@/src/assets/img/icons";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
@@ -11,7 +16,6 @@ const UserList = () => {
   const ToggleClick = () => {
     setShow(!show);
   };
-
 
   return (
     <>
@@ -319,204 +323,33 @@ const UserList = () => {
             </div>
           </div>
         </main>
+        <Modal size="lg" show={show} onHide={ToggleClick}>
+          <Modal.Header>
+            <Modal.Title>Add User</Modal.Title>
+            <Image
+              src={closeIcon}
+              alt="Back"
+              class="img-fluid"
+              width="15"
+              style={{ filter: " grayscale(1);" }}
+              onClick={ToggleClick}
+            />
+          </Modal.Header>
+          <Modal.Body><UserForm /></Modal.Body>
+          <Modal.Footer>
+            <Button
+              variant="secondary"
+              onClick={ToggleClick}
+              className="btn btn-muted"
+            >
+              Close
+            </Button>
+            <Button variant="primary" onClick={ToggleClick}>
+              Save Changes
+            </Button>
+          </Modal.Footer>
+        </Modal>
       </div>
-
-      {/* -------------------------------------------------------- */}
-
-      <Modal size="lg" show={show} onHide={ToggleClick}>
-        <Modal.Header >
-          <Modal.Title>Add User</Modal.Title>
-          <Image src={closeIcon} alt="Back" class="img-fluid" width="15" style={{ filter: " grayscale(1);" }} onClick={ToggleClick}/>
-        </Modal.Header>
-        <Modal.Body>
-          <UserForm />
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={ToggleClick} className="btn btn-muted">
-            Close
-          </Button>
-          <Button variant="primary" onClick={ToggleClick}>
-            Save Changes
-          </Button>
-        </Modal.Footer>
-      </Modal>
-      {/* ------------------------------------------------------------------------- */}
-      {/* <div
-        id="add_user"
-        className={`${show ? "modal fade":"show"}`}
-        tabIndex="-1"
-        role="dialog"
-        aria-hidden="true"
-      >
-        <div
-          className="modal-dialog modal-lg modal-dialog-centered"
-          role="document"
-        >
-          <div className="modal-content ">
-            <div className="modal-header">
-              <h5 className="modal-title">Add User</h5>
-              <button
-                type="button"
-                className="close"
-                data-dismiss="modal"
-                aria-label="Close"
-                onClick={ToggleClick}
-              >
-                <span>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20.422"
-                    height="20.422"
-                    viewBox="0 0 20.422 20.422"
-                  >
-                    <path
-                      id="icons8_close"
-                      d="M5.265,3.99a1.274,1.274,0,0,0-.889,2.188L12.4,14.2,4.376,22.217a1.274,1.274,0,1,0,1.8,1.8L14.2,16l8.019,8.019a1.274,1.274,0,1,0,1.8-1.8L16,14.2l8.019-8.019a1.274,1.274,0,1,0-1.8-1.8L14.2,12.4,6.178,4.376A1.274,1.274,0,0,0,5.265,3.99Z"
-                      transform="translate(-3.99 -3.99)"
-                      fill="#a3a3a3"
-                    />
-                  </svg>
-                </span>
-              </button>
-            </div>
-            <div className="modal-body">
-              <div className="col-10 mx-auto">
-                <div className="login-form p-0 row">
-                  <div className="mb-3 col-md-6">
-                    <label
-                      htmlFor="formGroupExampleInput"
-                      className="form-label"
-                    >
-                      Name
-                    </label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      id="formGroupExampleInput"
-                      placeholder="Name"
-                    />
-                  </div>
-                  <div className="mb-3 col-md-6">
-                    <label
-                      htmlFor="formGroupExampleInput"
-                      className="form-label"
-                    >
-                      Email
-                    </label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      id="formGroupExampleInput"
-                      placeholder="Email "
-                    />
-                  </div>
-                  <div className="mb-3 col-md-6">
-                    <label
-                      htmlFor="formGroupExampleInput"
-                      className="form-label"
-                    >
-                      Role
-                    </label>
-                    <select name="country" id="region" className="form-control">
-                      <option value="Default region name:">Setect Role</option>
-                      <option value="India">Admin</option>
-                      <option value="U.S.">User</option>
-                    </select>
-                  </div>
-                  <div className="mb-3 col-md-6">
-                    <label
-                      htmlFor="formGroupExampleInput"
-                      className="form-label"
-                    >
-                      City
-                    </label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      id="formGroupExampleInput"
-                      placeholder="City "
-                    />
-                  </div>
-                  <div className="mb-3 col-md-6">
-                    <label
-                      htmlFor="formGroupExampleInput"
-                      className="form-label"
-                    >
-                      State
-                    </label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      id="formGroupExampleInput"
-                      placeholder="State "
-                    />
-                  </div>
-                  <div className="mb-3 col-md-6">
-                    <label
-                      htmlFor="formGroupExampleInput"
-                      className="form-label"
-                    >
-                      Zip Code
-                    </label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      id="formGroupExampleInput"
-                      placeholder="Zip Code "
-                    />
-                  </div>
-
-                  <div className="mb-3 col-md-6">
-                    <label
-                      htmlFor="formGroupExampleInput"
-                      className="form-label"
-                    >
-                      Address Line 1
-                    </label>
-                    <textarea
-                      className=" form-control"
-                      id="textarea"
-                      rows="3"
-                    ></textarea>
-                  </div>
-                  <div className="mb-3 col-md-6">
-                    <label
-                      htmlFor="formGroupExampleInput"
-                      className="form-label"
-                    >
-                      Address Line 2
-                    </label>
-                    <textarea
-                      className=" form-control"
-                      id="textarea"
-                      rows="3"
-                    ></textarea>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="modal-footer justify-content-center">
-              <div className="text-center my-2">
-                <Link
-                  href="javascript:void(0)"
-                  className="btn btn-muted mr-2"
-                  data-dismiss="modal"
-                  onClick={ToggleClick}
-                >
-                  Cancel
-                </Link>
-                <Link
-                  href="javascript:void(0)"
-                  className="btn btn-primary"
-                  data-dismiss="modal"
-                >
-                  Save
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> */}
     </>
   );
 };

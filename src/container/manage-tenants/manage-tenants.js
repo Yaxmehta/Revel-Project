@@ -123,6 +123,7 @@ const ManageTenants = () => {
                         <>
                           <div className="col-12 col-md-3 mb-4">
                             <div className="card text text-center mb-0">
+                              <Link href={ROUTE_URL.DASHBOARD}>
                               <div className="icon">
                                 <Image
                                   src={el.img}
@@ -131,11 +132,12 @@ const ManageTenants = () => {
                                   width="140"
                                 />
                               </div>
+                              </Link>
                               {el.name}
                               <div className="actions">
                                 <ul className="list-unstyled d-flex flex-row mb-0 justify-content-center">
                                   <li>
-                                    <Link href="javascript:void(0)">
+                                    <Link href={ROUTE_URL.DASHBOARD}>
                                       <i className="r-icon r-icon-info-outline"></i>
                                     </Link>
                                   </li>

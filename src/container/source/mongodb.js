@@ -67,7 +67,7 @@ const Mongodb = () => {
                         className="form-control p-10-15"
                         id="pipeline"
                       />
-                      <label for="pipeline">Pipeline Name</label>
+                      <label htmlFor="pipeline">Pipeline Name</label>
                       <small className="mt-1 d-inline-block text-grey font-10">
                         A unique name for your Pipeline
                       </small>
@@ -89,7 +89,7 @@ const Mongodb = () => {
                           name="secure"
                           className="custom-control-input"
                         />
-                        <label className="custom-control-label" for="paste">
+                        <label className="custom-control-label" htmlFor="paste">
                           Paste Connection String
                         </label>
                       </div>
@@ -100,7 +100,7 @@ const Mongodb = () => {
                           name="secure"
                           className="custom-control-input"
                         />
-                        <label className="custom-control-label" for="connection">
+                        <label className="custom-control-label" htmlFor="connection">
                           Enter Connection Fields Manually
                         </label>
                       </div>
@@ -113,7 +113,7 @@ const Mongodb = () => {
                             className="form-control p-10-15"
                             id="db_host"
                           />
-                          <label for="db_host"> Database Host </label>
+                          <label htmlFor="db_host"> Database Host </label>
                           <small className="mt-1 d-inline-block text-grey font-10">
                             A comma-separated list of IP addresses or hostnames
                             of the databases you want to access.
@@ -127,7 +127,7 @@ const Mongodb = () => {
                             className="form-control p-10-15"
                             id="db_port"
                           />
-                          <label for="db_port"> Database Port </label>
+                          <label htmlFor="db_port"> Database Port </label>
                           <small className="mt-1 d-inline-block text-grey font-10">
                             The port on which the database is accepting
                             connections
@@ -141,7 +141,7 @@ const Mongodb = () => {
                             className="form-control p-10-15"
                             id="db_user"
                           />
-                          <label for="db_user"> Database User </label>
+                          <label htmlFor="db_user"> Database User </label>
                         </div>
                       </div>
                       <div className="col-12 col-md-6">
@@ -151,7 +151,7 @@ const Mongodb = () => {
                             className="form-control p-10-15"
                             id="db_password"
                           />
-                          <label for="db_password"> Database Password </label>
+                          <label htmlFor="db_password"> Database Password </label>
                         </div>
                       </div>
                       <div className="col-12 col-md-6">
@@ -161,7 +161,7 @@ const Mongodb = () => {
                             className="form-control p-10-15"
                             id="db_name"
                           />
-                          <label for="db_name">
+                          <label htmlFor="db_name">
                             {" "}
                             Authentication Database Name{" "}
                           </label>
@@ -182,7 +182,7 @@ const Mongodb = () => {
                   />
                   <label
                     className="custom-control-label d-inline-block mb-1"
-                    for="ssl"
+                    htmlFor="ssl"
                   >
                     Use SSL
                   </label>
@@ -201,7 +201,7 @@ const Mongodb = () => {
                           name="secure"
                           className="custom-control-input"
                         />
-                        <label className="custom-control-label" for="opt_log">
+                        <label className="custom-control-label" htmlFor="opt_log">
                           OpLog
                           <span className="badge badge-primary ml-2">
                             {" "}
@@ -222,7 +222,7 @@ const Mongodb = () => {
                           name="secure"
                           className="custom-control-input"
                         />
-                        <label className="custom-control-label" for="stream">
+                        <label className="custom-control-label" htmlFor="stream">
                           Change Streams
                           <div className="text-grey font-10 mt-2">
                             Data is ingested through Change Data Capture (CDC)
@@ -248,7 +248,7 @@ const Mongodb = () => {
                   />
                   <label
                     className="custom-control-label d-inline-block mb-1"
-                    for="conntect_http"
+                    htmlFor="conntect_http"
                   >
                     Connect Through SSH
                   </label>
@@ -285,7 +285,7 @@ const Mongodb = () => {
                       />
                       <label
                         className="custom-control-label d-inline-block mb-1"
-                        for="load_data"
+                        htmlFor="load_data"
                       >
                         Load Historical Data
                       </label>
@@ -303,7 +303,7 @@ const Mongodb = () => {
                       />
                       <label
                         className="custom-control-label d-inline-block mb-1"
-                        for="new_pipeline"
+                        htmlFor="new_pipeline"
                       >
                         Include New Tables in the Pipeline
                       </label>
@@ -321,7 +321,7 @@ const Mongodb = () => {
                   >
                     TEST CONNECTION
                   </a>
-                  <a href="javascript:void(0)" className="btn-lg btn  btn-primary">
+                  <a href={ROUTE_URL.SOURCE} className="btn-lg btn  btn-primary">
                     TEST & CONTINUE
                   </a>
                 </div>
@@ -349,7 +349,7 @@ const Mongodb = () => {
                   <div className="step">
                     <div>
                       <span className="badge badge-primary step-badge">Step 1</span>
-                      <label for="">
+                      <label htmlFor="">
                         Set up MongoDB Replication for OpLog and Change Streams
                       </label>
                     </div>
@@ -393,7 +393,7 @@ const Mongodb = () => {
                   <div className="step">
                     <div>
                       <span className="badge badge-primary step-badge">Step 2</span>
-                      <label for="">
+                      <label htmlFor="">
                         Set up Permissions to Read Generic <br />
                         MongoDB Databases
                       </label>
@@ -402,7 +402,7 @@ const Mongodb = () => {
                   <div className="step">
                     <div>
                       <span className="badge badge-primary step-badge">Step 3</span>
-                      <label for="">Whitelist Hevo’s IP Addresses</label>
+                      <label htmlFor="">Whitelist Hevo’s IP Addresses</label>
                     </div>
                     <p>
                       In order to allow Hevo to access your MongoDB databases,
