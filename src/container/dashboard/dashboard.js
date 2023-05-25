@@ -26,7 +26,7 @@ const Dashboard = () => {
           <div className="container">
             <div className="row">
               <div className="col-12">
-                <h4 className="page-title">Welcome home</h4>
+                <h4 className="page-title">Welcome Dashboard</h4>
               </div>
             </div>
             <div className="row home-cards">

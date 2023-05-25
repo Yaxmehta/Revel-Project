@@ -32,7 +32,7 @@ export const COMPONENT_TITLE = {
   "/tenants/addTenant": "AddTenant",
   
   //Password
-  "/forgotPassword": "ForgotPassword",
+  "/forgotPassword": "ChangePassword",
 
   //User
   "/userProfile": "UserProfile",
