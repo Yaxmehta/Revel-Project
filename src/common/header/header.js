@@ -24,7 +24,7 @@ const Header = (props) => {
 
   return (
     <>
-      <div className="wrapper">
+      <div className="wrapper login-page">
         <header className="app-header">
           <nav className="navbar navbar-expand-lg brand-navbar">
             <div className="container-fluid">

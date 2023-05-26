@@ -105,6 +105,7 @@ const ManageTenants = () => {
 
   return (
     <>
+    <div className="wrapper login-page">
       <main class="main-content" id="main">
         <div className="container">
           <div className="row">
@@ -191,6 +192,7 @@ const ManageTenants = () => {
           </div>
         </div>
       </main>
+      </div>
     </>
   );
 };

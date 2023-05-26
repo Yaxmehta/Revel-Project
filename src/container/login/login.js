@@ -19,13 +19,14 @@ const Login = () => {
                     width="280"
                   ></Image>
                 </div>
+
                 <div className="form-group label-inside">
                   <div className="mb-2" htmlFor="email"> Email Address</div>
                   <div className="icon-box">
                     <i className="r-icon r-icon-mail"></i>
                   </div>
                   <input type="text" className="form-control" id="email" />
-                  
+
                 </div>
                 <div className="form-group label-inside">
                   <div className="mb-2" htmlFor="password"> Password</div>
@@ -33,8 +34,9 @@ const Login = () => {
                     <i className="r-icon r-icon-lock1"></i>
                   </div>
                   <input type="password" className="form-control" id="password" />
-                  
                 </div>
+
+
                 <div className="d-flex justyfy-content-between form-group my-3">
                   <div className="custom-control custom-checkbox text-muted">
                     <input

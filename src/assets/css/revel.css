@@ -29,17 +29,17 @@ body {
     background-color: var(--hover-color) !important;
 }
 
-.wrapper {
-    /* min-height: 100vh; */
-}
+/* .wrapper {
+    max-height: 100vh;
+} */
 
 .wrapper {
-    /* background: url(../img/app-bg.png) no-repeat center center; */
+    background: url(../img/app-bg.png) no-repeat center center;
     background-size: cover;
 }
 
 .login-page {
-    /* background: url(../img/login-bg.png) no-repeat center center; */
+    background: url(../img/login-bg.png) no-repeat center center;
     background-size: cover;
 }
 
