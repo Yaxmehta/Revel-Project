@@ -8,7 +8,7 @@ const Home = () => {
   return (
     <>
     <PageHeader title={NAVBAR_TITLE.ADDROLE} />
-    <Header title={HEADER_TITLE.HOME}/>
+    <Header title={HEADER_TITLE.ROLEMANAGEMENT}/>
     < Add_Role/>
     </>
   );

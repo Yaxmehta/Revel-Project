@@ -3,109 +3,32 @@ import Image from "next/image";
 import Link from "next/link";
 import { Logo } from "../../assets/img";
 import { quotoneIcon, rydotIcon } from "../../assets/img/icons";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import { ROUTE_URL } from "@/src/constant/url";
+import axios from "axios";
+import readdata from "@/public/alltenants.json";
+
+
 const ManageTenants = () => {
-  const [visible, setVisible] = useState(7);
+  // const[tenantData,setTenantData]= useState('');
+  const [visible, setVisible] = useState(3);
   const showmoreitem = () => {
     setVisible((predata) => predata + 8);
   };
-  const data = [
-    {
-      id: 1,
-      name: "Revel",
-      img: Logo,
-    },
-    {
-      id: 2,
-      name: "Quotone",
-      img: quotoneIcon,
-    },
-    {
-      id: 3,
-      name: "Rydot",
-      img: rydotIcon,
-    },
-    {
-      id: 4,
-      name: "Revel",
-      img: Logo,
-    },
-    {
-      id: 5,
-      name: "Quotone",
-      img: quotoneIcon,
-    },
-    {
-      id: 6,
-      name: "Rydot",
-      img: rydotIcon,
-    },
-    {
-      id: 7,
-      name: "Revel",
-      img: Logo,
-    },
-    {
-      id: 8,
-      name: "Quotone",
-      img: quotoneIcon,
-    },
-    {
-      id: 9,
-      name: "Rydot",
-      img: rydotIcon,
-    },
-    {
-      id: 10,
-      name: "Revel",
-      img: Logo,
-    },
-    {
-      id: 11,
-      name: "Quotone",
-      img: quotoneIcon,
-    },
-    {
-      id: 12,
-      name: "Rydot",
-      img: rydotIcon,
-    },
-    {
-      id: 13,
-      name: "Revel",
-      img: Logo,
-    },
-    {
-      id: 14,
-      name: "Quotone",
-      img: quotoneIcon,
-    },
-    {
-      id: 15,
-      name: "Rydot",
-      img: rydotIcon,
-    },
-    {
-      id: 16,
-      name: "Revel",
-      img: Logo,
-    },
-    {
-      id: 17,
-      name: "Quotone",
-      img: quotoneIcon,
-    },
-    {
-      id: 18,
-      name: "Rydot",
-      img: rydotIcon,
-    },
-  ];
+
+
+//  const getAllTenants=async()=>{
+//   const tenants= await axios.get("http://master.revel-dev.test:8001/role/v1/getAll");
+//   setTenantData(tenants.data)
+//   console.log(tenants.data)
+// }
+// useEffect(()=>{
+//   getAllTenants();
+// },[]);
 
   return (
     <>
-    <div className="wrapper login-page">
+    <div className="wrapper">
       <main class="main-content" id="main">
         <div className="container">
           <div className="row">
@@ -119,7 +42,7 @@ const ManageTenants = () => {
                     </p>
                   </div>
                   <div className="row data-lake-cards tenants">
-                    {data.slice(0, visible).map((el) => {
+                    {readdata[0].data.slice(0,visible).map((items) => {
                       return (
                         <>
                           <div className="col-12 col-md-3 mb-4">
@@ -127,14 +50,14 @@ const ManageTenants = () => {
                               <Link href={ROUTE_URL.DASHBOARD}>
                               <div className="icon">
                                 <Image
-                                  src={el.img}
-                                  alt="Revel"
+                                  src={items.logo}
+                                  alt=""
                                   className="img-fluid mx-auto"
                                   width="140"
                                 />
                               </div>
                               </Link>
-                              {el.name}
+                              {items.profile.name}
                               <div className="actions">
                                 <ul className="list-unstyled d-flex flex-row mb-0 justify-content-center">
                                   <li>
@@ -159,6 +82,7 @@ const ManageTenants = () => {
                               </div>
                             </div>
                           </div>
+                        {/* <h1>{items.profile.name}</h1> */}
                         </>
                       );
                     })}

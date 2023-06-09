@@ -20,5 +20,7 @@ export { default as SAP_Icon } from "./sap.svg";
 export { default as downloadIcon } from "./download.svg";
 export { default as importIcon } from "./import.svg";
 export { default as cancelIcon } from "./cancel.svg";
-export { default as closeIcon } from "./close.svg";
+export { default as closeIcon } from "../../css/svg-fonts/icons/close-sign.svg";
 export { default as BackArrowIcon } from "./back-arrow.svg";
+export { default as ElasticSearchIcon } from "./elasticsearch.svg";
+export { default as CassandraIcon } from "./cassandra.svg";

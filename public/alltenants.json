@@ -1,0 +1,176 @@
+[
+    {
+      "respDesc": "success",
+      "data": [
+          {
+              "createdAt": "2023-03-20T12:59:09.505+00:00",
+              "createdBy": "Rydot System",
+              "updatedAt": "2023-03-20 12:59:09.506Z",
+              "updatedBy": "Kalpen Patel",
+              "createIp": "127.0.0.1",
+              "updateIp": "127.0.0.1",
+              "id": "6418589d6ab63c922113fba6",
+              "status": 1,
+              "isDeleted": false,
+              "dbIp": "127.0.0.1",
+              "dbUser": "master",
+              "dbPort": 27017,
+              "dbPassword": "****",
+              "profile": {
+                  "name": "master",
+                  "fullName": "revel",
+                  "designation": "Owner",
+                  "phoneNumber": "+91 9033748044",
+                  "country": "India"
+              },
+              "logo": {
+                  "logoUrl": "",
+                  "faviconUrl": ""
+              },
+              "emailAccount": {
+                  "host": "",
+                  "port": 21,
+                  "fromAddress": "",
+                  "username": "",
+                  "password": "",
+                  "secure": true
+              }
+          },
+          {
+              "updatedAt": "2023-03-27 10:45:54.852Z",
+              "updatedBy": "6418589d6ab63c922113fbaa",
+              "updateIp": "192.168.12.122",
+              "id": "6421702e5c2ec461dfae215b",
+              "status": 1,
+              "isDeleted": false,
+              "dbIp": "localhost",
+              "dbUser": "intuit",
+              "dbPort": 27017,
+              "dbPassword": "****",
+              "profile": {
+                  "name": "intuit",
+                  "fullName": "Pooja Yadav",
+                  "designation": "QA",
+                  "phoneNumber": "1234567890",
+                  "email": "pooja@gmail.com",
+                  "country": "India"
+              }
+          },
+          {
+              "id": "642447d65c2ec461dfae2170",
+              "status": 1,
+              "isDeleted": false,
+              "dbIp": "localhost",
+              "dbUser": "uss",
+              "dbPort": 27017,
+              "dbPassword": "****",
+              "profile": {
+                  "name": "uss",
+                  "email": "uss@gmail.com"
+              }
+          },
+          {
+              "updatedAt": "2023-04-28 10:25:03.333Z",
+              "updatedBy": "6418589d6ab63c922113fbaa",
+              "updateIp": "192.168.12.122",
+              "id": "644b7882b5f1530f30af95db",
+              "status": 1,
+              "isDeleted": false,
+              "dbIp": "localhost",
+              "dbUser": "pantaloon",
+              "dbPort": 27017,
+              "dbPassword": "****",
+              "profile": {
+                  "name": "pantaloon",
+                  "fullName": "Mewa Maulik",
+                  "designation": "IT",
+                  "phoneNumber": "9988776655",
+                  "email": "mewa@gmail.com",
+                  "country": "India"
+              },
+              "connectorConfigId": "644b7882b5f1530f30af95da"
+          },
+          {
+              "id": "6450be6cb5f1530f30af9608",
+              "status": 1,
+              "isDeleted": false,
+              "dbIp": "localhost",
+              "dbUser": "kfc",
+              "dbPort": 27017,
+              "dbPassword": "****",
+              "profile": {
+                  "name": "kfc",
+                  "email": "kfc@gmail.com"
+              },
+              "connectorConfigId": "6450be6cb5f1530f30af9607"
+          },
+          {
+              "id": "64672a4497ceea00220dc873",
+              "status": 1,
+              "isDeleted": false,
+              "dbIp": "localhost",
+              "dbUser": "vimal",
+              "dbPort": 27017,
+              "dbPassword": "****",
+              "profile": {
+                  "name": "vimal",
+                  "email": "vimal@gmail.com"
+              },
+              "connectorConfigId": "64672a4497ceea00220dc872"
+          },
+          {
+              "createdAt": "2023-05-31T06:02:04.251+00:00",
+              "createdBy": "6418589d6ab63c922113fbaa",
+              "createIp": "192.168.13.134",
+              "id": "6476e2dcf727b272169a55e0",
+              "status": 1,
+              "isDeleted": false,
+              "dbIp": "localhost",
+              "dbUser": "amitabh",
+              "dbPort": 27017,
+              "dbPassword": "****",
+              "profile": {
+                  "name": "amitabh",
+                  "email": "amitbds@gmail.com"
+              },
+              "connectorConfigId": "6476e2dcf727b272169a55df"
+          },
+          {
+              "createdAt": "2023-05-31T06:31:59.946+00:00",
+              "createdBy": "6418589d6ab63c922113fbaa",
+              "createIp": "192.168.12.37",
+              "id": "6476e9dff727b272169a55e6",
+              "status": 1,
+              "isDeleted": false,
+              "dbIp": "localhost",
+              "dbUser": "abcd",
+              "dbPort": 27017,
+              "dbPassword": "****",
+              "profile": {
+                  "name": "abcd",
+                  "email": "abdc@gmail.com"
+              },
+              "connectorConfigId": "6476e9dff727b272169a55e5"
+          },
+          {
+              "createdAt": "2023-05-31T06:35:19.167+00:00",
+              "createdBy": "6418589d6ab63c922113fbaa",
+              "createIp": "192.168.12.124",
+              "id": "6476eaa7f727b272169a55ec",
+              "status": 1,
+              "isDeleted": false,
+              "dbIp": "localhost",
+              "dbUser": "abddc",
+              "dbPort": 27017,
+              "dbPassword": "****",
+              "profile": {
+                  "name": "abddc",
+                  "email": "abddc@gmail.com"
+              },
+              "connectorConfigId": "6476eaa7f727b272169a55eb"
+          }
+      ],
+      "requestId": "5be57e20-175b-487f-aeb5-ec9d12a258c9-1686114002017",
+      "respCode": "000"
+  }
+  ]

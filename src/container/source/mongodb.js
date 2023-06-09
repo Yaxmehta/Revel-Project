@@ -1,4 +1,4 @@
-import { cancelIcon, BackArrowIcon, MongoDB_Icon } from "@/src/assets/img/icons";
+import {  BackArrowIcon, MongoDB_Icon, closeIcon } from "@/src/assets/img/icons";
 import { ROUTE_URL } from "@/src/constant/url";
 import Link from "next/link";
 import Image from "next/image";
@@ -25,7 +25,7 @@ const Mongodb = () => {
             <ol className="breadcrumb bg-white mb-0 p-0 align-items-center ml-auto">
               <Link href={ROUTE_URL.ADDSOURCE} className="sidebar-toggler" id="">
                 <Image
-                  src={cancelIcon}
+                  src={closeIcon}
                   alt="Back"
                   className="img-fluid"
                   width="15"
@@ -402,7 +402,7 @@ const Mongodb = () => {
                   <div className="step">
                     <div>
                       <span className="badge badge-primary step-badge">Step 3</span>
-                      <label htmlFor="">Whitelist Hevo’s IP Addresses</label>
+                      <label htmlFor="">Whitelist Hevo's IP Addresses</label>
                     </div>
                     <p>
                       In order to allow Hevo to access your MongoDB databases,

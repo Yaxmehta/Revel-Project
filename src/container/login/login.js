@@ -1,9 +1,81 @@
-import {Logo,loginImg} from "../../assets/img";
+import { Logo, loginImg } from "../../assets/img";
 import Image from "next/image";
 import Link from "next/link";
 import { ROUTE_URL } from "@/src/constant/url";
+import { useState, useEffect } from "react";
+import { useRouter } from "next/router";
+
 const Login = () => {
-  
+  const[show,setShow]=useState(false);
+  const [api, setApi] = useState(null);
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const router = useRouter();
+
+  // const get= async()=>{
+
+  //    const params={
+  //       client_id: "master",
+  //       redirect_uri: "/auth",
+  //       response_type: "code",
+  //       scope: "api.read",
+
+  //    }
+
+  //    const value= await fetch("http://master.revel-dev.test:8051/oauth2/authorize",params);
+  //    setApi(value);
+
+  // }
+
+  // useEffect(()=>{
+  //    get();
+  //   //  window.location.href="/auth";
+  // },[]);
+
+  // const params = {
+  //   client_id: "master",
+  //   redirect_uri: "./",
+  //   response_type: "code",
+  //   scope: "api.read",
+  // };
+
+  // useEffect(() => {
+  //   const handleLogin = async () => {
+  //     try {
+  //       // Make an API call to the authentication endpoint
+  //       const response = await fetch(
+  //         "http://master.revel-dev.test:8051/oauth2/authorize",
+  //         params,
+  //         {
+  //           method: "GET",
+  //           headers: {
+  //             "Content-Type": "application/json",
+  //           },
+  //           body: JSON.stringify({ username, password }),
+  //         }
+  //       );
+
+  //       if (response.ok) {
+  //         const data = await response.json();
+  //         setApi(data);
+  //         console.log(data);
+  //       } else {
+  //         // Handle authentication error
+  //         console.error();
+  //         "Authentication failed:", response.status;
+  //       }
+  //     } catch (error) {
+  //       console.error("An error occurred during authentication:", error);
+  //       console.log("error", error);
+  //     }
+  //   };
+  //   handleLogin();
+  // }, []);
+
+  const handleShow=()=>{
+    setShow(!show);
+  }
+
   return (
     <>
       <div className="wrapper login-page">
@@ -19,23 +91,42 @@ const Login = () => {
                     width="280"
                   ></Image>
                 </div>
+                <form className="form"></form>
+                <div className="form-group label-inside">
+                  <div className="input-wrapper">
+                    <input
+                      className="input"
+                      pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                      type="text"
+                      placeholder=" "
+                      data-placeholder="Email Address"
+                      required
+                    />
+                    <span className="placeholder">Email Address</span>
+                    <div className="icon-box">
+                      <i className="r-icon r-icon-mail"></i>
+                    </div>
+                  </div>
+                </div>
 
                 <div className="form-group label-inside">
-                  <div className="mb-2" htmlFor="email"> Email Address</div>
-                  <div className="icon-box">
-                    <i className="r-icon r-icon-mail"></i>
+                  <div className="input-wrapper">
+                    <input
+                      className="input"
+                      type="password"
+                      placeholder=" "
+                      data-placeholder="Password"
+                      required
+                    />
+                    <span className="placeholder">Password</span>
+                    <div className="icon-box">
+                      <i className="r-icon r-icon-lock1"></i>
+                    </div>
+                    <div className="icon-box-eye1">
+                      <i className="r-icon r-icon-eye"></i>
+                    </div>
                   </div>
-                  <input type="text" className="form-control" id="email" />
-
                 </div>
-                <div className="form-group label-inside">
-                  <div className="mb-2" htmlFor="password"> Password</div>
-                  <div className="icon-box">
-                    <i className="r-icon r-icon-lock1"></i>
-                  </div>
-                  <input type="password" className="form-control" id="password" />
-                </div>
-
 
                 <div className="d-flex justyfy-content-between form-group my-3">
                   <div className="custom-control custom-checkbox text-muted">
@@ -45,11 +136,11 @@ const Login = () => {
                       id="remember_me"
                       name="example1"
                     />
-                    <label className="custom-control-label" for="remember_me">
+                    <label className="custom-control-label" htmlFor="remember_me">
                       Remember me
                     </label>
                   </div>
-                  <Link href={ROUTE_URL.CHANGEPASSWORD} className="d-block ml-auto">
+                  <Link href="javascript:void(0)" className="d-block ml-auto">
                     Forgot Password?
                   </Link>
                 </div>

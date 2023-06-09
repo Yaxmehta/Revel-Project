@@ -17,12 +17,15 @@ const Role_Management = () => {
                       Role Management
                     </h4>
                     <p className="text-muted font-12">
-                      Edit role permissions, create new roles and set Link default
-                      for new people in your instance
+                      Edit role permissions, create new roles and set Link
+                      default for new people in your instance
                     </p>
                   </div>
                   <div className="buttons mt-3">
-                    <Link href={ROUTE_URL.ADDROLE} className="btn mr-2 btn-primary">
+                    <Link
+                      href={ROUTE_URL.ADDROLE}
+                      className="btn mr-2 btn-primary"
+                    >
                       <Image src={plusIcon} alt="Add" />
                       Add Role
                     </Link>
@@ -41,7 +44,10 @@ const Role_Management = () => {
                 >
                   10 COLUMNS SELECTED OF 20
                 </Link>
-                <Link href="javascript:void(0)" className="btn btn-outline-light mr-2">
+                <Link
+                  href="javascript:void(0)"
+                  className="btn btn-outline-light mr-2"
+                >
                   CLEAR FILTERS
                 </Link>
                 <div className="form-group mb-0 search-form position-relative">
@@ -73,17 +79,22 @@ const Role_Management = () => {
                     <th>
                       Role Name
                       <span className="text-right float-right">
-                        <i className="r-icon r-icon-filter"></i>
+                        <i class="r-icon r-icon-filter text-muted"></i>
                       </span>
                     </th>
 
                     <th>
                       Created
                       <span className="text-right float-right">
-                        <i className="r-icon r-icon-filter"></i>
+                        <i class="r-icon r-icon-filter text-muted"></i>
                       </span>
                     </th>
-                    <th>Last Activity</th>
+                    <th>
+                      Last Activity
+                      <span className="text-right float-right">
+                        <i class="r-icon r-icon-filter text-muted"></i>
+                      </span>
+                    </th>
                     <th className="text-center">Action</th>
                   </tr>
                 </thead>

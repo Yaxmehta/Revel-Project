@@ -29,9 +29,7 @@ body {
     background-color: var(--hover-color) !important;
 }
 
-/* .wrapper {
-    max-height: 100vh;
-} */
+
 
 .wrapper {
     background: url(../img/app-bg.png) no-repeat center center;
@@ -103,10 +101,10 @@ body {
     border: 1px solid #E5E5E5;
 }
 
-.subscribe-form .form-group.label-inside .btn {
+.create-accout-btn .btn {
     position: absolute;
-    right: 5px;
-    top: 5px;
+    right: 0px;
+    top: 28px;
     height: 40px;
     line-height: 2;
 }
@@ -125,6 +123,15 @@ body {
     left: 15px;
 }
 
+.form-group.label-inside .icon-box-eye1 {
+    position: absolute;
+    bottom: 8px;
+    right: 15px;
+}
+
+
+
+
 .login-form .form-control:focus+label {
     top: -10px;
     left: 30px;
@@ -140,7 +147,7 @@ body {
 }
 
 .custom-control {
-    padding-left: 35px;
+    padding-left: 30px;
 }
 
 .custom-control-input:checked~.custom-control-label::before {
@@ -165,9 +172,9 @@ a {
     right: 0px;
 }
 
-.brand-navbar a {
-    color: #fff;
-}
+/* .brand-navbar a { */
+    /* color: #fff; */
+/* } */
 
 .breadcrumb-item+.breadcrumb-item::before {
     content: ">";
@@ -259,7 +266,7 @@ a {
     padding-top: 90px;
     background-color: #EFFAFF;
     width: 250px;
-    z-index: 998;
+    z-index: 99;
     box-shadow: 5px 5px 10px rgb(0 0 0 / 35%);
     transition: all .4s ease-in-out;
 }
@@ -269,7 +276,8 @@ a {
 }
 
 .main-content {
-    margin-top: 120px;
+    margin-top: 90px;
+    height: 90vh;
 }
 
 .brand-sidebar .nav-link {
@@ -1001,26 +1009,6 @@ input[type="number"]::-webkit-inner-spin-button {
 .font-18 {
     font-size: 18px !important;
 }
-.font-12 {
-    font-size: 12px !important;
-}
-
-.active-btn {
-    color: #13aa52;
-    margin-top: 15px;
-    font-weight: 600;
-    /* padding: 7px 0px; */
-    background-color: #b7e5ca;
-    border-radius: 5px;
-    text-align: left;
-    min-width: 150px;
-}
-
-.active-btn:hover {
-    color: #13aa52;
-    background-color: #b7e5ca;
-
-}
 
 .search-form i {
     position: absolute;
@@ -1304,7 +1292,7 @@ input[type="number"]::-webkit-inner-spin-button {
     margin-bottom: 10px;
 }
 
-.table-body .form-control {}
+/* .table-body .form-control {} */
 
 .custom-dropdown {
     position: relative;
@@ -1350,7 +1338,7 @@ input[type="number"]::-webkit-inner-spin-button {
     grid-template-columns: repeat(5, 1fr);
 }
 
-.custom-collapse {}
+/* .custom-collapse {} */
 
 .custom-collapse .inner-card {
     padding: 10px;
@@ -1381,7 +1369,174 @@ input[type="number"]::-webkit-inner-spin-button {
 
 
 
+/* ===============================Input without JS===================================== */
 
+
+
+
+  .input {
+    height: 40px;
+    font-size: 14px;
+    padding: 11px 15px;
+    border-radius: 4px;
+    border: 1px solid #CBD8E3;
+    width: 100%;
+    outline: none;
+    box-sizing: border-box;
+    padding-left:45px;
+  }
+  .placeholder {
+    pointer-events: none;
+    position: absolute;
+    font-weight: 400;
+    top: 10px;
+    left: 40px;
+    padding: 0 8px;
+    background-color: white;
+    border-radius: 5px;
+    transition: transform 250ms cubic-bezier(0.4,0,0.2,1), opacity 250ms cubic-bezier(0.4,0,0.2,1);
+    color: grey;
+  }
+  
+  .input:not(:placeholder-shown).input:not(:focus) + .placeholder {
+    transform: scale(.75) translateY(-30px) translateX(-15%);
+    color: #000000;
+    transition: .2s ease;
+    font-weight: 500;
+  }
+  
+  .input:focus {
+    border-color: #0088ff;
+  
+  } 
+  
+  .input:focus + .placeholder {
+    transform: scale(.75) translateY(-30px) translateX(-15%);
+    color: #0088ff;
+    transition: .2s ease;
+  } 
+  
+  .input:invalid:not(:placeholder-shown){
+    transition: .2s ease;
+    border-color:#F52C5C;
+  }
+  
+  .input:invalid:not(:placeholder-shown) + .placeholder{
+    transition: .2s ease;
+    color:#F52C5C;
+    font-weight: 500;
+  }
+  .input:invalid:not(:placeholder-shown).input:not(:focus) + .placeholder {
+    transform: scale(.75) translateY(-30px) translateX(-15%);
+    color: #F52C5C;
+    transition: .2s ease;
+    top: 15px;
+    font-weight: 500;
+  }
+
+
+
+
+
+
+
+
+/* ===============================Input without JS===================================== */
+
+
+
+
+
+
+table thead th span{
+    position: relative;
+    right: 60px;
+}
+
+
+.dropdown-slide.show .dropdown-menu.show {
+    display: block;
+    visibility: visible;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+}
+.app-header .navbar-nav .dropdown-menu-accout {
+    right: -25px;
+}
+.app-header .navbar-nav .dropdown-menu-right {
+    right: -12px;
+    left: auto;
+}
+.app-header .navbar-nav .dropdown-menu {
+    min-width: 300px;
+    margin: 1.5rem 0 0;
+    border: none;
+    box-shadow: 0 10px 70px 0 rgba(108,158,195,.25);
+}
+.dropdown-slide .dropdown-menu {
+    position: absolute;
+    display: block;
+    visibility: hidden;
+    -webkit-transition: visibility .2s,opacity .2s,-webkit-transform 500ms cubic-bezier(.43,.26,.11,.99);
+    transition: visibility .2s,opacity .2s,transform 500ms cubic-bezier(.43,.26,.11,.99);
+    transition: visibility .2s,opacity .2s,transform 500ms cubic-bezier(.43,.26,.11,.99),-webkit-transform 500ms cubic-bezier(.43,.26,.11,.99);
+    -webkit-transform: translateY(30px);
+    -ms-transform: translateY(30px);
+    transform: translateY(30px);
+    opacity: 0;
+}
+
+
+.app-header .navbar-nav .dropdown-menu .dropdown-item {
+    padding: 10px 1.5rem;
+    color: #3c4b6c;
+    font-size: 14px;
+}
+.dropdown-item  {
+    display: block;
+    width: 100%;
+    padding: 0.25rem 1.5rem;
+    clear: both;
+    font-weight: 400;
+    color: #212529;
+    text-align: inherit;
+    white-space: nowrap;
+    background: 0 0;
+    border: 0;
+}
+
+.app-header .navbar-nav .dropdown-menu .dropdown-header {
+    margin-bottom: 8px;
+    color: #45567c;
+    border-bottom: 1px solid #e5e9ec;
+    font-size: 15px;
+}
+
+.app-header .navbar-nav .dropdown-menu:after {
+    position: absolute;
+    top: -12px;
+    right: 30px;
+    clear: both;
+    width: 0;
+    height: 0;
+    content: "";
+    border-right: 12px solid transparent;
+    border-bottom: 12px solid #fff;
+    border-left: 12px solid transparent;
+}
+
+
+.menu-b-navbar {
+    background-color: var(--primary-color);
+    padding: 0px;
+    z-index: 995;
+    position: fixed;
+    top: 55px;
+    left: 0px;
+    right: 0px;
+}
 
 
 

@@ -27,21 +27,22 @@ const Add_Role = () => {
                 </div>
               </div>
             </div>
-            <div className="login-htmlForm p-0">
+
+            <div className="login-form p-0">
               <div className="row px-2">
                 <div className="col-12 col-md-3">
                   <div className="mb-2"> Role Name</div>
-                  <div className="htmlForm-group label-inside">
+                  <div className="form-group label-inside">
                     <input
                       type="text"
-                      className="htmlForm-control"
+                      className="form-control"
                       id="role_name"
                     />
                   </div>
                 </div>
 
                 <div className="col-12 col-md-3">
-                  <label className="d-block" style={{ height: "0px" }}>
+                  <label className="d-block" style={{height:"0px"}}>
                     &nbsp;
                   </label>
                   <div className="custom-control custom-switch mt-status">

@@ -9,13 +9,37 @@ import Link from "next/link";
 import { useState } from "react";
 import { Modal, Button } from "react-bootstrap";
 import UserForm from "./userform";
-import { cancelIcon } from "@/src/assets/img/icons";
+import CloseButton from "react-bootstrap/CloseButton";
+import userdata from "@/public/users.json";
 
 const UserList = () => {
   const [show, setShow] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+
   const ToggleClick = () => {
     setShow(!show);
   };
+
+  
+  const itemsPerPage = 10;
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+  const paginatedData =  userdata[0].data.slice(startIndex, endIndex);
+  const maxPage = Math.ceil(userdata[0].data.length / itemsPerPage);
+  const pageNumbers = [...Array(maxPage + 1).keys()].slice(1);
+
+  function handlePreviousPage() {
+    if (currentPage !== 1) {
+      setCurrentPage(currentPage - 1);
+    }
+  }
+  
+  function handleNextPage() {
+    if (currentPage !== maxPage) {
+      setCurrentPage(currentPage + 1);
+    }
+  }
+  
 
   return (
     <>
@@ -117,209 +141,135 @@ const UserList = () => {
                 </div>
               </div>
             </div>
+
             <div className="table-responsive mt-3">
               <table className="table table-light user-table">
                 <thead>
                   <tr>
                     <th>
-                      <div className="custom-control custom-checkbox text-muted">
+                      <div class="custom-control custom-checkbox text-muted">
                         <input
                           type="checkbox"
-                          className="custom-control-input"
+                          class="custom-control-input"
                           id="check_all"
                         />
-                        <label
-                          className="custom-control-label"
-                          htmlFor="check_all"
-                        >
+                        <label class="custom-control-label" for="check_all">
                           &nbsp;
                         </label>
                       </div>
                     </th>
                     <th>
                       Name
-                      <span className="text-right float-right">
-                        <i className="r-icon r-icon-filter text-muted"></i>
+                      <span class="text-right float-right">
+                        <i class="r-icon r-icon-filter text-muted"></i>
                       </span>
                     </th>
                     <th>
                       Email
-                      <span className="text-right float-right">
-                        <i className="r-icon r-icon-filter text-muted"></i>
+                      <span class="text-right float-right">
+                        <i class="r-icon r-icon-filter text-muted"></i>
                       </span>
                     </th>
                     <th>
                       Role
-                      <span className="text-right float-right">
-                        <i className="r-icon r-icon-filter text-muted"></i>
+                      <span class="text-right float-right">
+                        <i class="r-icon r-icon-filter text-muted"></i>
                       </span>
                     </th>
-                    <th className="text-center">Actions</th>
+                    <th class="text-center">Actions</th>
                   </tr>
                 </thead>
-                <tbody>
-                  <tr>
-                    <td>
-                      <div className="custom-control custom-checkbox text-muted">
-                        <input
-                          type="checkbox"
-                          className="custom-control-input"
-                          id="1"
-                        />
-                        <label className="custom-control-label" htmlFor="1">
-                          &nbsp;
-                        </label>
-                      </div>
-                    </td>
-                    <td>
-                      <span className="user-name short-name bg-warning">
-                        AB
-                      </span>
-                      <span>Amar Bhardwaj</span>
-                    </td>
-                    <td>amer@revel.com</td>
-                    <td>
-                      <span className="badge badge-muted role-badge ">
-                        {" "}
-                        Member
-                      </span>
-                    </td>
-                    <td>
-                      <div className="buttons">
-                        <Link href="javascript:void(0)" className="text-muted">
-                          <i className="r-icon r-icon-info-outline"></i>
-                        </Link>
-                        <Link href="javascript:void(0)" className="text-info">
-                          <i className="r-icon r-icon-pencil"></i>
-                        </Link>
-                        <Link href="javascript:void(0)" className="text-danger">
-                          <i className="r-icon r-icon-delete"></i>
-                        </Link>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <div className="custom-control custom-checkbox text-muted">
-                        <input
-                          type="checkbox"
-                          className="custom-control-input"
-                          id="1"
-                        />
-                        <label className="custom-control-label" htmlFor="1">
-                          &nbsp;
-                        </label>
-                      </div>
-                    </td>
-                    <td>
-                      <span className="user-name short-name bg-primary">
-                        AB
-                      </span>
-                      <span>Amar Bhardwaj</span>
-                    </td>
-                    <td>amer@revel.com</td>
-                    <td>
-                      <span className="badge badge-muted role-badge ">
-                        {" "}
-                        Member
-                      </span>
-                    </td>
-                    <td>
-                      <div className="buttons">
-                        <Link href="javascript:void(0)" className="text-muted">
-                          <i className="r-icon r-icon-info-outline"></i>
-                        </Link>
-                        <Link href="javascript:void(0)" className="text-info">
-                          <i className="r-icon r-icon-pencil"></i>
-                        </Link>
-                        <Link href="javascript:void(0)" className="text-danger">
-                          <i className="r-icon r-icon-delete"></i>
-                        </Link>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <div className="custom-control custom-checkbox text-muted">
-                        <input
-                          type="checkbox"
-                          className="custom-control-input"
-                          id="1"
-                        />
-                        <label className="custom-control-label" htmlFor="1">
-                          &nbsp;
-                        </label>
-                      </div>
-                    </td>
-                    <td>
-                      <span className="user-name short-name bg-secondary">
-                        AB
-                      </span>
-                      <span>Amar Bhardwaj</span>
-                    </td>
-                    <td>amer@revel.com</td>
-                    <td>
-                      <span className="badge badge-muted role-badge ">
-                        {" "}
-                        Member
-                      </span>
-                    </td>
-                    <td>
-                      <div className="buttons">
-                        <Link href="javascript:void(0)" className="text-muted">
-                          <i className="r-icon r-icon-info-outline"></i>
-                        </Link>
-                        <Link href="javascript:void(0)" className="text-info">
-                          <i className="r-icon r-icon-pencil"></i>
-                        </Link>
-                        <Link href="javascript:void(0)" className="text-danger">
-                          <i className="r-icon r-icon-delete"></i>
-                        </Link>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <div className="custom-control custom-checkbox text-muted">
-                        <input
-                          type="checkbox"
-                          className="custom-control-input"
-                          id="1"
-                        />
-                        <label className="custom-control-label" htmlFor="1">
-                          &nbsp;
-                        </label>
-                      </div>
-                    </td>
-                    <td>
-                      <span className="user-name short-name bg-success">
-                        AB
-                      </span>
-                      <span>Amar Bhardwaj</span>
-                    </td>
-                    <td>amer@revel.com</td>
-                    <td>
-                      <span className="badge badge-muted role-badge ">
-                        {" "}
-                        Member
-                      </span>
-                    </td>
-                    <td>
-                      <div className="buttons">
-                        <Link href="javascript:void(0)" className="text-muted">
-                          <i className="r-icon r-icon-info-outline"></i>
-                        </Link>
-                        <Link href="javascript:void(0)" className="text-info">
-                          <i className="r-icon r-icon-pencil"></i>
-                        </Link>
-                        <Link href="javascript:void(0)" className="text-danger">
-                          <i className="r-icon r-icon-delete"></i>
-                        </Link>
-                      </div>
-                    </td>
-                  </tr>
-                </tbody>
+                {paginatedData.map((user, i) => {
+                  return (
+                    <>
+                      <tbody>
+                        <tr key={i}>
+                          <td>
+                            <div className="custom-control custom-checkbox text-muted">
+                              <input
+                                type="checkbox"
+                                className="custom-control-input"
+                                id="1"
+                              />
+                              <label
+                                className="custom-control-label"
+                                htmlFor="1"
+                              >
+                                &nbsp;
+                              </label>
+                            </div>
+                          </td>
+                          <td>{user.name}</td>
+                          <td>{user.email}</td>
+                          <td>{user.roleId}</td>
+                          <td>
+                            <div className="buttons">
+                              <Link
+                                href="javascript:void(0)"
+                                className="text-muted"
+                              >
+                                <i className="r-icon r-icon-info-outline"></i>
+                              </Link>
+                              <Link
+                                href="javascript:void(0)"
+                                className="text-info"
+                              >
+                                <i className="r-icon r-icon-pencil"></i>
+                              </Link>
+                              <Link
+                                href="javascript:void(0)"
+                                className="text-danger"
+                              >
+                                <i className="r-icon r-icon-delete"></i>
+                              </Link>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </>
+                  );
+                })}
               </table>
+            </div>
+            <div>
+              <nav>
+                <ul className="pagination justify-content-center">
+                  <li className="page-item">
+                    <button
+                      className="page-link"
+                      onClick={handlePreviousPage}
+                      style={{ borderRadius: "50px", padding: "5px 15px" }}
+                    >
+                      Prev
+                    </button>
+                  </li>
+                  {pageNumbers.map((pages, i) => (
+                    <li
+                      className={`page-item ${
+                        currentPage === pages ? "active" : ""
+                      }`}
+                      key={i}
+                    >
+                      <button
+                        className="page-link"
+                        onClick={() => setCurrentPage(pages)}
+                        style={{ borderRadius: "50px", padding: "5px 15px" }}
+                      >
+                        {pages}
+                      </button>
+                    </li>
+                  ))}
+                  <li className="page-item">
+                    <button
+                      className="page-link"
+                      onClick={handleNextPage}
+                      style={{ borderRadius: "50px", padding: "5px 15px" }}
+                    >
+                      Next
+                    </button>
+                  </li>
+                </ul>
+              </nav>
             </div>
           </div>
         </main>
@@ -334,8 +284,11 @@ const UserList = () => {
               style={{ filter: " grayscale(1);" }}
               onClick={ToggleClick}
             />
+            {/* <CloseButton aria-label="Hide" onClick={ToggleClick} variant="white"/> */}
           </Modal.Header>
-          <Modal.Body><UserForm /></Modal.Body>
+          <Modal.Body>
+            <UserForm />
+          </Modal.Body>
           <Modal.Footer>
             <Button
               variant="secondary"
