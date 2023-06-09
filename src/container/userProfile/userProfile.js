@@ -7,7 +7,7 @@ import { ROUTE_URL } from "@/src/constant/url";
 const UserProfile = () => {
   return (
     <>
-      <div className="wrapper">
+      <div className="wrapper app-header">
         <main className="main-content" id="main">
           <div className="container-fluid">
             <div className="row">
@@ -15,7 +15,7 @@ const UserProfile = () => {
                 <div className="d-flex justify-content-lg-end justify-content-center">
                   <div className="buttons my-2">
                     <Link
-                      href="javascript:void(0)"
+                      href="#"
                       className="btn mr-2 btn-outline-light"
                     >
                       <Image src={refreshIcon} alt="Refresh" />
@@ -158,13 +158,13 @@ const UserProfile = () => {
                   <div className="col-12">
                     <div className="d-flex justify-content-center my-3">
                       <Link
-                        href="javascript:void(0)"
+                        href="#"
                         className="btn-lg btn btn-muted btn-default mr-2 min-width-150"
                       >
                         CANCEL
                       </Link>
                       <Link
-                        href="javascript:void(0)"
+                        href="#"
                         className="btn-lg btn  btn-primary min-width-150"
                       >
                         SAVE

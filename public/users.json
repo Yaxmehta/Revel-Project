@@ -1,0 +1,302 @@
+[{
+    "respDesc": "success",
+    "data": [
+        {
+            "createdAt": "2023-03-20T12:59:09.689+00:00",
+            "createdBy": "Rydot System",
+            "updatedAt": "2023-06-07 07:19:51.918Z",
+            "updatedBy": "6418589d6ab63c922113fbaa",
+            "createIp": "localhost",
+            "updateIp": "192.168.12.37",
+            "id": "6418589d6ab63c922113fbaa",
+            "status": 1,
+            "isDeleted": false,
+            "name": "system",
+            "email": "admin@gmail.com",
+            "password": "$2a$10$URvQuwBqRxsyoEkBUpXDjegxLqcCY7eDSZPLipesUA0gPpZm47pTa",
+            "roleId": "6418589d6ab63c922113fba9",
+            "title": "Mr.",
+            "department": "IT",
+            "lastLoginIP": "localhost",
+            "addressDetails": [
+                {
+                    "addressline1": "B-1208",
+                    "addressline2": "Navratna Corporate Park",
+                    "city": "Ahmedabad",
+                    "country": "India",
+                    "state": "Gujarat"
+                }
+            ],
+            "lastLoginRefreshToken": "6SQk8C_SxgrAPlPMKSPRRcC3UE7aKUWQjrrv98nEP4Xw_Lv1fxJETaAURJsh88kFJkwTXv_GePhr1F1ukpir0rRxi056MrBUSOUhMUlHEBbLNARKgXSClhaperhNJxW6",
+            "tenantId": "6418589d6ab63c922113fba6"
+        },
+        {
+            "createdAt": "2023-03-23T09:49:01.942+00:00",
+            "createIp": "192.168.12.122",
+            "id": "641c208dbffb135fd047db02",
+            "status": 1,
+            "isDeleted": false,
+            "name": "amit",
+            "email": "amitc@tridhyaintuiut.com",
+            "password": "4UMMY3V5",
+            "roleId": "641c2044bffb135fd047db00",
+            "addressDetails": [
+                {
+                    "city": "Ahmedabad",
+                    "state": "Gujarat",
+                    "zipcode": 100865,
+                    "address line 1": "Bopal Ambli",
+                    "address line 2": "Near One world west"
+                }
+            ],
+            "tenantId": "6418589d6ab63c922113fba6"
+        },
+        {
+            "id": "6421702e5c2ec461dfae215d",
+            "status": 1,
+            "isDeleted": false,
+            "name": "intuit",
+            "email": "pooja@gmail.com",
+            "password": "ryC5UAn6",
+            "roleId": "6421702e5c2ec461dfae215a",
+            "title": "",
+            "department": "",
+            "lastLoginIP": "127.0.0.1",
+            "tenantId": "6421702e5c2ec461dfae215b"
+        },
+        {
+            "id": "642170f65c2ec461dfae2163",
+            "status": 0,
+            "isDeleted": false,
+            "name": "tridhya",
+            "email": "tridhya@gmail.com",
+            "password": "fw0DoWVw",
+            "roleId": "642170f65c2ec461dfae2160",
+            "title": "",
+            "department": "",
+            "lastLoginIP": "127.0.0.1",
+            "tenantId": "642170f65c2ec461dfae2161"
+        },
+        {
+            "createdAt": "2023-03-29T10:57:04.011+00:00",
+            "createdBy": "6421702e5c2ec461dfae215d",
+            "updatedAt": "2023-03-29 10:59:35.900Z",
+            "updatedBy": "6421702e5c2ec461dfae215d",
+            "createIp": "192.168.12.122",
+            "updateIp": "192.168.12.122",
+            "id": "642419805c2ec461dfae216b",
+            "status": 1,
+            "isDeleted": false,
+            "name": "Utsav",
+            "email": "utsav@gmail.com",
+            "password": "04qfTLTK",
+            "roleId": "642417f75c2ec461dfae2169",
+            "title": "devops",
+            "department": "IT",
+            "addressDetails": [
+                {
+                    "city": "Ahmedabad",
+                    "state": "Gujarat",
+                    "zipcode": 100865,
+                    "address line 1": "Bopal Ambli",
+                    "address line 2": "Near One world west"
+                }
+            ],
+            "tenantId": "6421702e5c2ec461dfae215b"
+        },
+        {
+            "id": "642447d65c2ec461dfae2172",
+            "status": 0,
+            "isDeleted": false,
+            "name": "uss",
+            "email": "uss@gmail.com",
+            "password": "gcIITiKA",
+            "roleId": "642447d65c2ec461dfae216f",
+            "title": "",
+            "department": "",
+            "lastLoginIP": "127.0.0.1",
+            "tenantId": "642447d65c2ec461dfae2170"
+        },
+        {
+            "id": "644a090fb5f1530f30af95d4",
+            "status": 1,
+            "isDeleted": false,
+            "name": "kalpen",
+            "email": "kalpenp@rydotintuit.com",
+            "password": "TrnmxUot",
+            "roleId": "644a090fb5f1530f30af95d0",
+            "title": "",
+            "department": "",
+            "lastLoginIP": "127.0.0.1",
+            "tenantId": "644a090fb5f1530f30af95d2"
+        },
+        {
+            "id": "644b7882b5f1530f30af95dd",
+            "status": 1,
+            "isDeleted": false,
+            "name": "pantaloon",
+            "email": "mewa@gmail.com",
+            "password": "mewa",
+            "roleId": "644b7882b5f1530f30af95d9",
+            "title": "",
+            "department": "",
+            "lastLoginIP": "127.0.0.1",
+            "tenantId": "644b7882b5f1530f30af95db"
+        },
+        {
+            "createdAt": "2023-05-01T11:17:43.698+00:00",
+            "createdBy": "644b7882b5f1530f30af95dd",
+            "updatedAt": "2023-05-04 07:07:23.860Z",
+            "updatedBy": "6450be6cb5f1530f30af960a",
+            "createIp": "192.168.12.122",
+            "updateIp": "192.168.51.24",
+            "id": "644f9fd7b5f1530f30af95fa",
+            "status": 0,
+            "isDeleted": false,
+            "name": "Sameer Shah Deleted",
+            "email": "Maharshi@pantaloon.com",
+            "password": "5iCkpINK",
+            "roleId": "644f903cb5f1530f30af95eb",
+            "addressDetails": [
+                {
+                    "city": "Ahmedabad",
+                    "state": "Gujarat",
+                    "zipcode": 380015,
+                    "address line 1": "Bopal Ambli",
+                    "address line 2": "Near One world west"
+                },
+                {
+                    "city": "Rajkot",
+                    "state": "Gujarat"
+                },
+                {
+                    "city": "Kutch",
+                    "state": "Gujarat",
+                    "zipcode": 356543,
+                    "address line 1": "Anjaar Ambli",
+                    "address line 2": "Near One world west"
+                }
+            ]
+        },
+        {
+            "createdAt": "2023-05-02T07:13:11.426+00:00",
+            "createdBy": "644b7882b5f1530f30af95dd",
+            "createIp": "192.168.12.122",
+            "id": "6450b807b5f1530f30af9601",
+            "status": 2,
+            "isDeleted": false,
+            "name": "Pintu",
+            "email": "pintu@pantaloon.com",
+            "password": "nnjf79Fr",
+            "roleId": "644f8ff3b5f1530f30af95e9",
+            "addressDetails": [
+                {
+                    "city": "Ahmedabad",
+                    "state": "Gujarat",
+                    "zipcode": 380015,
+                    "address line 1": "Bopal Ambli",
+                    "address line 2": "Near One world west"
+                }
+            ],
+            "tenantId": "644b7882b5f1530f30af95db"
+        },
+        {
+            "id": "6450be6cb5f1530f30af960a",
+            "status": 1,
+            "isDeleted": false,
+            "name": "kfc",
+            "email": "kfc@gmail.com",
+            "password": "Test",
+            "roleId": "6450be6cb5f1530f30af9606",
+            "title": "",
+            "department": "",
+            "lastLoginIP": "127.0.0.1",
+            "tenantId": "6450be6cb5f1530f30af9608"
+        },
+        {
+            "createdAt": "2023-05-04T07:14:41.898+00:00",
+            "createdBy": "6450be6cb5f1530f30af960a",
+            "createIp": "192.168.51.24",
+            "id": "64535b61ad9fef0236651d9c",
+            "status": 2,
+            "isDeleted": false,
+            "name": "NewUserKFC",
+            "email": "kfc2@gmail.com",
+            "password": "NuaPZr3r",
+            "roleId": "6450de3db5f1530f30af960c",
+            "addressDetails": [
+                {
+                    "city": "Jaipur",
+                    "state": "Rajasthan",
+                    "zipcode": 4567872,
+                    "address line 1": "Dungarpur Tekri",
+                    "address line 2": "Near Trimurti Mandir"
+                }
+            ],
+            "tenantId": "6450be6cb5f1530f30af9608"
+        },
+        {
+            "id": "64672a4497ceea00220dc875",
+            "status": 1,
+            "isDeleted": false,
+            "name": "vimal",
+            "email": "vimal@gmail.com",
+            "password": "ghntjxk0",
+            "roleId": "64672a4497ceea00220dc871",
+            "title": "",
+            "department": "",
+            "lastLoginIP": "127.0.0.1",
+            "tenantId": "64672a4497ceea00220dc873"
+        },
+        {
+            "createdAt": "2023-05-31T06:02:04.336+00:00",
+            "createdBy": "6418589d6ab63c922113fbaa",
+            "createIp": "192.168.13.134",
+            "id": "6476e2dcf727b272169a55e2",
+            "status": 1,
+            "isDeleted": false,
+            "name": "amitabh",
+            "email": "amitbds@gmail.com",
+            "password": "$2a$10$.8HF9uAh8Uxbtlj2gUXOVOx92Xc55QLzYCdWpl63KlKNg3gN.innW",
+            "roleId": "6476e2dcf727b272169a55de",
+            "title": "",
+            "department": "",
+            "lastLoginIP": "127.0.0.1",
+            "tenantId": "6476e2dcf727b272169a55e0"
+        },
+        {
+            "createdAt": "2023-05-31T06:32:00.014+00:00",
+            "createdBy": "6418589d6ab63c922113fbaa",
+            "createIp": "192.168.12.37",
+            "id": "6476e9e0f727b272169a55e8",
+            "status": 1,
+            "isDeleted": false,
+            "name": "abcd",
+            "email": "abdc@gmail.com",
+            "password": "$2a$10$2pva19WBCs0Yg10/MvOuKu8Ct7GFkOX6wrhvfj/tUsCyYYNlYbkbW",
+            "roleId": "6476e9dff727b272169a55e4",
+            "title": "",
+            "department": "",
+            "lastLoginIP": "127.0.0.1",
+            "tenantId": "6476e9dff727b272169a55e6"
+        },
+        {
+            "createdAt": "2023-05-31T06:35:19.224+00:00",
+            "createdBy": "6418589d6ab63c922113fbaa",
+            "createIp": "192.168.12.124",
+            "id": "6476eaa7f727b272169a55ee",
+            "status": 1,
+            "isDeleted": false,
+            "name": "abddc",
+            "email": "abddc@gmail.com",
+            "password": "$2a$10$jw5z.9pbcnDoEMOf.XR99OfvOc4uXVtWEw.VQoyaaY4g3hU8zM7Ia",
+            "roleId": "6476eaa7f727b272169a55ea",
+            "title": "",
+            "department": "",
+            "lastLoginIP": "127.0.0.1",
+            "tenantId": "6476eaa7f727b272169a55ec"
+        }
+    ],
+    "requestId": "48eae19e-5613-4a1e-9b65-b225651b3e37-1686122430649",
+    "respCode": "000"
+}]

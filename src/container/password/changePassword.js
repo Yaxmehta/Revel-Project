@@ -4,7 +4,7 @@ import Link from "next/link";
 const ChangePassword = () => {
   return (
     <>
-      <div class="wrapper">
+      <div class="wrapper app-header">
         <main class="main-content" id="main">
           <div class="container-fluid pl-5">
             <div class="row mt-4 justify-content-center">
@@ -45,7 +45,7 @@ const ChangePassword = () => {
 
                 <div class="text-center my-2">
                   <Link
-                    href="javascript:void(0)"
+                    href="#"
                     class="btn btn-muted mr-2"
                     data-dismiss="modal"
                   >

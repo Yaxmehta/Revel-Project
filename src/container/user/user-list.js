@@ -6,20 +6,167 @@ import {
 } from "@/src/assets/img/icons";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
-import { Modal, Button } from "react-bootstrap";
+import React, { useState, useEffect } from "react";
+import { Modal, Button, Table } from "react-bootstrap";
+import { Pagination } from "react-bootstrap";
 import UserForm from "./userform";
-import { cancelIcon } from "@/src/assets/img/icons";
+import userdata from "@/public/users.json";
+import { toast } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
+import axios from "axios";
 
 const UserList = () => {
   const [show, setShow] = useState(false);
+  // const [currentPage, setCurrentPage] = useState(1);
+  // const [filteredUsers, setFilteredUsers] = useState([]);
+  // const [searchTerm, setSearchTerm] = useState("");
+
+
+  // const handlePagination = (page) => {
+  //   setCurrentPage(page);
+  // };
+
+
+  // const handleSearch = (event) => {
+  //   const term = event.target.value;
+  //   setSearchTerm(term);
+
+  //   const filteredData = userdata[0].data.filter((user) =>
+  //     user.name.toLowerCase().includes(term.toLowerCase())
+  //   );
+  //   setFilteredUsers(filteredData);
+  //   setCurrentPage(1);
+
+  //   const message = filteredUsers ? `${filteredData.length} record (s) found` : 'No record match found';
+  //   const toastId = "record message";
+  //   toast.success(message, { toastId })
+  // };
+
   const ToggleClick = () => {
     setShow(!show);
   };
 
+
+  // const itemsPerPage = 10;
+  // const users = searchTerm ? filteredUsers : userdata[0].data;
+  // const totalUsers = users.length;
+  // const totalPages = Math.ceil(totalUsers / itemsPerPage);
+  // const startIndex = (currentPage - 1) * itemsPerPage;
+  // const endIndex = startIndex + itemsPerPage;
+  // const paginatedUsers = users.slice(startIndex, endIndex);
+  // const pageNumbers = [...Array(totalPages + 1).keys()].slice(1);
+
+  // function handlePreviousPage() {
+  //   if (currentPage !== 1) {
+  //     setCurrentPage(currentPage - 1);
+  //   }
+
+  // }
+
+  // function handleNextPage() {
+  //   if (currentPage !== totalPages) {
+  //     setCurrentPage(currentPage + 1);
+  //   }
+
+  // }
+
+  // const handleDelete = (id) => {
+  //   const index = userdata[0].data.findIndex((record) => record.id === id);
+  //   if (index !== -1) {
+  //     const deletedRecord = userdata[0].data[index];
+  //     userdata[0].data.splice(index, 1);
+  //     setFilteredUsers(deletedRecord)
+  //   }
+  //   const toastId = "delete message";
+  //   toast.error("user deleted successfully", { toastId });
+  //   return null;
+
+  // };
+
+  const [users, setUsers] = useState([]);
+  // const [totalPages, setTotalPages] = useState(0);
+
+  // const fetchUsers = async (page = 1) => {
+  //   let token = "";
+  //   if (typeof window !== "undefined") {
+  //     token = JSON.parse(localStorage.getItem("token"));
+  //   }
+  //   try {
+  //     const response = await axios.get('http://master.revel-dev.test:9876/user/v1/getAll', {
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //         "Authorization": `bearer ${token}`,
+  //         "Access-Control-Allow-Origin": "*",
+  //         "Access-Control-Allow-Methods": ["GET", "POST", "PUT", "DELETE"]
+
+  //       }
+  //     });
+
+
+  //     setUsers(response.data.data);
+  //     console.log(response.data)
+  //     setCurrentPage(response.currentPage);
+  //     setTotalPages(response.totalPages);
+  //   } catch (error) {
+  //     console.error('Error fetching users:', error);
+  //   }
+  // };
+
+  // const handleSearch = (event) => {
+  
+  //   setSearchTerm(event.target.value);
+
+  //   fetchUsers();
+  // };
+
+
+
+  // const handlePagination = (page) => {
+  //   fetchUsers(page);
+  // };
+
+  const fetchUsers = async () => {
+    let token = "";
+
+    const storedToken = localStorage.getItem("token");
+    if (storedToken !== 'undefined') {
+      token = JSON.parse(storedToken);
+    }
+
+    try {
+      const response = await axios.get("http://master.revel-dev.test:9876/user/v1/getAll", {
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${token}`,
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Methods": ["GET", "POST", "PUT", "DELETE"]
+
+        }
+      });
+      setUsers(response.data.data);
+    } catch (error) {
+      console.log('Error fetching users:', error);
+    }
+  };
+
+
+
+  useEffect(() => {
+    
+
+    fetchUsers();
+  }, []);
+
+  const deleteUserRecord = (id) => {
+    const url = "http://master.revel-dev.test:9876/user/v1/delete";
+    const params = { id: id }
+
+    CustomDelete(url, params);
+  }
+
   return (
     <>
-      <div className="wrapper">
+      <div className="wrapper app-header">
         <main className="main-content" id="main">
           <div className="container-fluid">
             <div className="row px-2">
@@ -38,7 +185,7 @@ const UserList = () => {
                   </div>
                   <div className="buttons mt-3">
                     <Link
-                      href="javascript:void(0)"
+                      href="#"
                       className="btn mr-2 btn-primary"
                       data-toggle="modal"
                       data-target="#add_user"
@@ -48,13 +195,13 @@ const UserList = () => {
                       Add User
                     </Link>
                     <Link
-                      href="javascript:void(0)"
+                      href="#"
                       className="btn mr-2 btn-outline-light"
                     >
                       <Image src={downloadIcon} alt="Download" />
                     </Link>
                     <Link
-                      href="javascript:void(0)"
+                      href="#"
                       className="btn  btn-outline-light"
                     >
                       Bulk import
@@ -96,13 +243,13 @@ const UserList = () => {
               </div>
               <div className="col-12 col-md-6 text-right d-flex">
                 <Link
-                  href="javascript:void(0)"
+                  href="#"
                   className="btn btn-outline-light mr-2 ml-auto"
                 >
                   10 COLUMNS SELECTED OF 20
                 </Link>
                 <Link
-                  href="javascript:void(0)"
+                  href="#"
                   className="btn btn-outline-light mr-2"
                 >
                   CLEAR FILTERS
@@ -112,13 +259,16 @@ const UserList = () => {
                     type="text"
                     className="form-control"
                     placeholder="Search user"
+                  // value={searchTerm}
+                  // onChange={handleSearch}
                   />
                   <i className="fa fa-search"></i>
                 </div>
               </div>
             </div>
+
             <div className="table-responsive mt-3">
-              <table className="table table-light user-table">
+              <Table className="table table-light user-table" hover>
                 <thead>
                   <tr>
                     <th>
@@ -128,10 +278,7 @@ const UserList = () => {
                           className="custom-control-input"
                           id="check_all"
                         />
-                        <label
-                          className="custom-control-label"
-                          htmlFor="check_all"
-                        >
+                        <label className="custom-control-label" htmlFor="check_all">
                           &nbsp;
                         </label>
                       </div>
@@ -157,170 +304,78 @@ const UserList = () => {
                     <th className="text-center">Actions</th>
                   </tr>
                 </thead>
-                <tbody>
-                  <tr>
-                    <td>
-                      <div className="custom-control custom-checkbox text-muted">
-                        <input
-                          type="checkbox"
-                          className="custom-control-input"
-                          id="1"
-                        />
-                        <label className="custom-control-label" htmlFor="1">
-                          &nbsp;
-                        </label>
-                      </div>
-                    </td>
-                    <td>
-                      <span className="user-name short-name bg-warning">
-                        AB
-                      </span>
-                      <span>Amar Bhardwaj</span>
-                    </td>
-                    <td>amer@revel.com</td>
-                    <td>
-                      <span className="badge badge-muted role-badge ">
-                        {" "}
-                        Member
-                      </span>
-                    </td>
-                    <td>
-                      <div className="buttons">
-                        <Link href="javascript:void(0)" className="text-muted">
-                          <i className="r-icon r-icon-info-outline"></i>
-                        </Link>
-                        <Link href="javascript:void(0)" className="text-info">
-                          <i className="r-icon r-icon-pencil"></i>
-                        </Link>
-                        <Link href="javascript:void(0)" className="text-danger">
-                          <i className="r-icon r-icon-delete"></i>
-                        </Link>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <div className="custom-control custom-checkbox text-muted">
-                        <input
-                          type="checkbox"
-                          className="custom-control-input"
-                          id="1"
-                        />
-                        <label className="custom-control-label" htmlFor="1">
-                          &nbsp;
-                        </label>
-                      </div>
-                    </td>
-                    <td>
-                      <span className="user-name short-name bg-primary">
-                        AB
-                      </span>
-                      <span>Amar Bhardwaj</span>
-                    </td>
-                    <td>amer@revel.com</td>
-                    <td>
-                      <span className="badge badge-muted role-badge ">
-                        {" "}
-                        Member
-                      </span>
-                    </td>
-                    <td>
-                      <div className="buttons">
-                        <Link href="javascript:void(0)" className="text-muted">
-                          <i className="r-icon r-icon-info-outline"></i>
-                        </Link>
-                        <Link href="javascript:void(0)" className="text-info">
-                          <i className="r-icon r-icon-pencil"></i>
-                        </Link>
-                        <Link href="javascript:void(0)" className="text-danger">
-                          <i className="r-icon r-icon-delete"></i>
-                        </Link>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <div className="custom-control custom-checkbox text-muted">
-                        <input
-                          type="checkbox"
-                          className="custom-control-input"
-                          id="1"
-                        />
-                        <label className="custom-control-label" htmlFor="1">
-                          &nbsp;
-                        </label>
-                      </div>
-                    </td>
-                    <td>
-                      <span className="user-name short-name bg-secondary">
-                        AB
-                      </span>
-                      <span>Amar Bhardwaj</span>
-                    </td>
-                    <td>amer@revel.com</td>
-                    <td>
-                      <span className="badge badge-muted role-badge ">
-                        {" "}
-                        Member
-                      </span>
-                    </td>
-                    <td>
-                      <div className="buttons">
-                        <Link href="javascript:void(0)" className="text-muted">
-                          <i className="r-icon r-icon-info-outline"></i>
-                        </Link>
-                        <Link href="javascript:void(0)" className="text-info">
-                          <i className="r-icon r-icon-pencil"></i>
-                        </Link>
-                        <Link href="javascript:void(0)" className="text-danger">
-                          <i className="r-icon r-icon-delete"></i>
-                        </Link>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <div className="custom-control custom-checkbox text-muted">
-                        <input
-                          type="checkbox"
-                          className="custom-control-input"
-                          id="1"
-                        />
-                        <label className="custom-control-label" htmlFor="1">
-                          &nbsp;
-                        </label>
-                      </div>
-                    </td>
-                    <td>
-                      <span className="user-name short-name bg-success">
-                        AB
-                      </span>
-                      <span>Amar Bhardwaj</span>
-                    </td>
-                    <td>amer@revel.com</td>
-                    <td>
-                      <span className="badge badge-muted role-badge ">
-                        {" "}
-                        Member
-                      </span>
-                    </td>
-                    <td>
-                      <div className="buttons">
-                        <Link href="javascript:void(0)" className="text-muted">
-                          <i className="r-icon r-icon-info-outline"></i>
-                        </Link>
-                        <Link href="javascript:void(0)" className="text-info">
-                          <i className="r-icon r-icon-pencil"></i>
-                        </Link>
-                        <Link href="javascript:void(0)" className="text-danger">
-                          <i className="r-icon r-icon-delete"></i>
-                        </Link>
-                      </div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+                {users.map((user) => {
+                  return (
+                    <>
+                      <tbody>
+                        <tr key={user.id}>
+                          <td>
+                            <div className="custom-control custom-checkbox text-muted">
+                              <input
+                                type="checkbox"
+                                className="custom-control-input"
+                                id={user.id}
+                              />
+                              <label
+                                className="custom-control-label"
+                                htmlFor="1"
+                              >
+                                &nbsp;
+                              </label>
+                            </div>
+                          </td>
+                          <td>{user.name}</td>
+                          <td>{user.email}</td>
+                          <td>{user.roleId}</td>
+                          <td>
+                            <div className="buttons">
+                              <Link
+                                href="#"
+                                className="text-muted"
+                              >
+                                <i className="r-icon r-icon-info-outline"></i>
+                              </Link>
+                              <Link
+                                href="#"
+                                className="text-info"
+                              >
+                                <i className="r-icon r-icon-pencil"></i>
+                              </Link>
+                              <Link
+                                href="#"
+                                className="text-danger"
+                                onClick={() => deleteUserRecord(user.id)}
+                              >
+
+                                <i className="r-icon r-icon-delete" ></i>
+                              </Link>
+
+                            </div>
+
+                          </td>
+                        </tr>
+                      </tbody>
+                    </>
+                  );
+                })}
+              </Table>
             </div>
+            {/* ------------------------- Pagination START ----------------------------------  */}
+            {/* {totalPages > 1 && (
+        <div>
+          {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+            <button
+              key={page}
+              onClick={() => handlePagination(page)}
+              disabled={page === currentPage}
+            >
+              {page}
+            </button>
+          ))}
+        </div>
+      )} */}
+            {/* ---------------------- Pagination END ---------------------------------------- */}
+
           </div>
         </main>
         <Modal size="lg" show={show} onHide={ToggleClick}>
@@ -334,8 +389,11 @@ const UserList = () => {
               style={{ filter: " grayscale(1);" }}
               onClick={ToggleClick}
             />
+            {/* <CloseButton aria-label="Hide" onClick={ToggleClick} variant="white"/> */}
           </Modal.Header>
-          <Modal.Body><UserForm /></Modal.Body>
+          <Modal.Body>
+            <UserForm />
+          </Modal.Body>
           <Modal.Footer>
             <Button
               variant="secondary"
@@ -349,6 +407,7 @@ const UserList = () => {
             </Button>
           </Modal.Footer>
         </Modal>
+
       </div>
     </>
   );

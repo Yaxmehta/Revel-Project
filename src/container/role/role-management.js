@@ -1,12 +1,49 @@
 import { plusIcon } from "@/src/assets/img/icons";
 import { ROUTE_URL } from "@/src/constant/url";
+import axios from "axios";
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
+import { Table } from "react-bootstrap";
+
 
 const Role_Management = () => {
+  const [rolesData, setRolesData] = useState([]);
+
+  const FetchRoles = async () => {
+    let token = "";
+
+    const storedToken = localStorage.getItem("token");
+    if (storedToken !== 'undefined') {
+      token = JSON.parse(storedToken);
+    }
+
+    try {
+      const response = await axios.get("http://master.revel-dev.test:9876/role/v1/getAll", {
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${token}`,
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Methods": ["GET", "POST", "PUT", "DELETE"]
+
+        }
+      });
+      setRolesData(response.data.data);
+      // console.log(response.data)
+
+    } catch (error) {
+      console.log('Error fetching users:', error);
+    }
+  }
+
+  useEffect(() => {
+    FetchRoles();
+  }, []);
+
+
   return (
     <>
-      <div className="wrapper">
+      <div className="wrapper app-header">
         <main className="main-content" id="main">
           <div className="container-fluid">
             <div className="row px-2">
@@ -17,12 +54,15 @@ const Role_Management = () => {
                       Role Management
                     </h4>
                     <p className="text-muted font-12">
-                      Edit role permissions, create new roles and set Link default
-                      for new people in your instance
+                      Edit role permissions, create new roles and set Link
+                      default for new people in your instance
                     </p>
                   </div>
                   <div className="buttons mt-3">
-                    <Link href={ROUTE_URL.ADDROLE} className="btn mr-2 btn-primary">
+                    <Link
+                      href={ROUTE_URL.ADDROLE}
+                      className="btn mr-2 btn-primary"
+                    >
                       <Image src={plusIcon} alt="Add" />
                       Add Role
                     </Link>
@@ -36,12 +76,15 @@ const Role_Management = () => {
               </div>
               <div className="col-12 col-md-6 text-right d-flex">
                 <Link
-                  href="javascript:void(0)"
+                  href="#"
                   className="btn btn-outline-light mr-2 ml-auto"
                 >
                   10 COLUMNS SELECTED OF 20
                 </Link>
-                <Link href="javascript:void(0)" className="btn btn-outline-light mr-2">
+                <Link
+                  href="#"
+                  className="btn btn-outline-light mr-2"
+                >
                   CLEAR FILTERS
                 </Link>
                 <div className="form-group mb-0 search-form position-relative">
@@ -54,8 +97,10 @@ const Role_Management = () => {
                 </div>
               </div>
             </div>
+
+
             <div className="table-responsive mt-3">
-              <table className="table table-light user-table">
+              <Table className="table table-light user-table" hover>
                 <thead>
                   <tr>
                     <th>
@@ -65,7 +110,7 @@ const Role_Management = () => {
                           className="custom-control-input"
                           id="check_all"
                         />
-                        <label className="custom-control-label" for="check_all">
+                        <label className="custom-control-label" htmlFor="check_all">
                           &nbsp;
                         </label>
                       </div>
@@ -73,135 +118,61 @@ const Role_Management = () => {
                     <th>
                       Role Name
                       <span className="text-right float-right">
-                        <i className="r-icon r-icon-filter"></i>
+                        <i class="r-icon r-icon-filter text-muted"></i>
                       </span>
                     </th>
 
                     <th>
                       Created
                       <span className="text-right float-right">
-                        <i className="r-icon r-icon-filter"></i>
+                        <i class="r-icon r-icon-filter text-muted"></i>
                       </span>
                     </th>
-                    <th>Last Activity</th>
+                    <th>
+                      Last Activity
+                      <span className="text-right float-right">
+                        <i class="r-icon r-icon-filter text-muted"></i>
+                      </span>
+                    </th>
                     <th className="text-center">Action</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>
-                      <div className="custom-control custom-checkbox text-muted">
-                        <input
-                          type="checkbox"
-                          className="custom-control-input"
-                          id="1"
-                        />
-                        <label className="custom-control-label" for="1">
-                          &nbsp;
-                        </label>
-                      </div>
-                    </td>
-                    <td>REVEL</td>
-
-                    <td>Dec 10, 2022 11:10AM</td>
-                    <td>Dec 10, 2022 11:10AM</td>
-                    <td>
-                      <div className="buttons">
-                        <Link href="javascript:void(0)" className="text-info">
-                          <i className="r-icon r-icon-pencil"></i>
-                        </Link>
-                        <Link href="javascript:void(0)" className="text-danger">
-                          <i className="r-icon r-icon-delete"></i>
-                        </Link>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <div className="custom-control custom-checkbox text-muted">
-                        <input
-                          type="checkbox"
-                          className="custom-control-input"
-                          id="2"
-                        />
-                        <label className="custom-control-label" for="2">
-                          &nbsp;
-                        </label>
-                      </div>
-                    </td>
-                    <td>RYDOT</td>
-
-                    <td>Dec 10, 2022 11:10AM</td>
-                    <td>Dec 10, 2022 11:10AM</td>
-                    <td>
-                      <div className="buttons">
-                        <Link href="javascript:void(0)" className="text-info">
-                          <i className="r-icon r-icon-pencil"></i>
-                        </Link>
-                        <Link href="javascript:void(0)" className="text-danger">
-                          <i className="r-icon r-icon-delete"></i>
-                        </Link>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <div className="custom-control custom-checkbox text-muted">
-                        <input
-                          type="checkbox"
-                          className="custom-control-input"
-                          id="3"
-                        />
-                        <label className="custom-control-label" for="3">
-                          &nbsp;
-                        </label>
-                      </div>
-                    </td>
-                    <td>Airtel</td>
-
-                    <td>Dec 10, 2022 11:10AM</td>
-                    <td>Dec 10, 2022 11:10AM</td>
-                    <td>
-                      <div className="buttons">
-                        <Link href="javascript:void(0)" className="text-info">
-                          <i className="r-icon r-icon-pencil"></i>
-                        </Link>
-                        <Link href="javascript:void(0)" className="text-danger">
-                          <i className="r-icon r-icon-delete"></i>
-                        </Link>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <div className="custom-control custom-checkbox text-muted">
-                        <input
-                          type="checkbox"
-                          className="custom-control-input"
-                          id="4"
-                        />
-                        <label className="custom-control-label" for="4">
-                          &nbsp;
-                        </label>
-                      </div>
-                    </td>
-                    <td>GEC</td>
-
-                    <td>Dec 10, 2022 11:10AM</td>
-                    <td>Dec 10, 2022 11:10AM</td>
-                    <td>
-                      <div className="buttons">
-                        <Link href="javascript:void(0)" className="text-info">
-                          <i className="r-icon r-icon-pencil"></i>
-                        </Link>
-                        <Link href="javascript:void(0)" className="text-danger">
-                          <i className="r-icon r-icon-delete"></i>
-                        </Link>
-                      </div>
-                    </td>
-                  </tr>
+                  {rolesData.map((roles) => {
+                    return (
+                      <>
+                        <tr key={roles.id}>
+                          <td>
+                            <div className="custom-control custom-checkbox text-muted">
+                              <input
+                                type="checkbox"
+                                className="custom-control-input"
+                                id={roles.id}
+                              />
+                              <label className="custom-control-label" htmlFor="1">
+                                &nbsp;
+                              </label>
+                            </div>
+                          </td>
+                          <td>{roles.name}</td>
+                          <td>{new Date(roles.createdAt).toLocaleString('en-US', { month: 'short', day: 'numeric', year: 'numeric', hour: 'numeric', minute: 'numeric', hour12: true })}</td>
+                          <td>{roles.lastActivity}</td>
+                          <td>
+                            <div className="buttons">
+                              <Link href="#" className="text-info">
+                                <i className="r-icon r-icon-pencil"></i>
+                              </Link>
+                              <Link href="#" className="text-danger">
+                                <i className="r-icon r-icon-delete"></i>
+                              </Link>
+                            </div>
+                          </td>
+                        </tr>
+                      </>
+                    )
+                  })}
                 </tbody>
-              </table>
+              </Table>
             </div>
           </div>
         </main>

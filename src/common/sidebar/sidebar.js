@@ -106,7 +106,7 @@ const SideBar = (props) => {
           <li className="nav-item">
             <Link
               className="nav-link d-flex justify-content-between align-items-center"
-              href="javascript:void(0)"
+              href="#"
             >
               <div>
                 <Image
@@ -134,7 +134,7 @@ const SideBar = (props) => {
           <li className="nav-item">
             <Link
               className="nav-link d-flex justify-content-between align-items-center"
-              href="javascript:void(0)"
+              href="#"
             >
               <div>
                 <Image
@@ -186,7 +186,7 @@ const SideBar = (props) => {
           <li className="nav-item">
             <Link
               className="nav-link d-flex justify-content-between align-items-center"
-              href="javascript:void(0)"
+              href="#"
             >
               <div>
                 <Image
@@ -214,7 +214,7 @@ const SideBar = (props) => {
           <li className="nav-item">
             <Link
               className="nav-link d-flex justify-content-between align-items-center"
-              href="javascript:void(0)"
+              href="#"
               data-toggle="collapse"
               data-target="#dropdown"
               onClick={handleClick}
@@ -268,7 +268,7 @@ const SideBar = (props) => {
         <ul className="navbar-nav navbar-nav-bottom">
           <li className="nav-item">
             <Link
-              href="javascript:void(0)"
+              href="#"
               className="btn btn-primary btn-block"
             >
               <i className="fa fa-plus mr-2"></i> Add integrations

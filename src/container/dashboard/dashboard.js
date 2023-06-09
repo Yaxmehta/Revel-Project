@@ -21,7 +21,7 @@ import Image from "next/image";
 const Dashboard = () => {
   return (
     <>
-      <div className="wrapper">
+      <div className="wrapper app-header">
         <main className="main-content" id="main">
           <div className="container">
             <div className="row">

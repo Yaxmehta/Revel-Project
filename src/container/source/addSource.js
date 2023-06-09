@@ -11,16 +11,16 @@ import Link from "next/link";
 const AddSource = () => {
   return (
     <>
-      <div className="wrapper">
+      <div className="wrapper app-header">
         <ul className="nav nav-tabs stepper justify-content-center top-120">
           <li className="nav-item">
-            <Link className="nav-link active" href="javascript:void(0)">
+            <Link className="nav-link active" href="#">
               <span className="number">1</span>
               <span>Select Source</span>
             </Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" href="javascript:void(0)">
+            <Link className="nav-link" href="#">
               <span class="number">2</span>
               <span>Configure Source Settings</span>
             </Link>
@@ -42,7 +42,7 @@ const AddSource = () => {
                     <div className="row data-lake-cards">
                       <div className="col-12 col-md-3">
                         <Link
-                          href="javascript:void(0)"
+                          href="#"
                           className="card text text-center mb-0 d-flex justify-content-center"
                         >
                           <div className="icon">
@@ -74,7 +74,7 @@ const AddSource = () => {
                       </div>
                       <div className="col-12 col-md-3">
                         <Link
-                          href="javascript:void(0)"
+                          href="#"
                           className="card text text-center mb-0 d-flex justify-content-center"
                         >
                           <div className="icon">
@@ -90,7 +90,7 @@ const AddSource = () => {
                       </div>
                       <div className="col-12 col-md-3">
                         <Link
-                          href="javascript:void(0)"
+                          href="#"
                           className="card text text-center mb-0 d-flex justify-content-center"
                         >
                           <div className="icon">

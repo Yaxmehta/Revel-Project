@@ -16,7 +16,7 @@ const DataSet = () => {
     }
   return (
     <>
-      <div className="wrapper">
+      <div className="wrapper app-header">
         <main className="main-content" id="main">
           <div className="container-fluid">
             <div className="row px-2">
@@ -32,7 +32,7 @@ const DataSet = () => {
                   </div>
                   <div className="buttons mt-3">
                     <Link
-                      href="javascript:void(0)"
+                      href="#"
                       className="btn mr-2 btn-primary"
                     >
                       <Image src={plusIcon} alt="Add" />
@@ -61,7 +61,7 @@ const DataSet = () => {
                     <div className="col-12 col-md-6 px-0">
                       <div className="d-flex align-items-center">
                         <Link
-                          href="javascript:void(0)"
+                          href="#"
                           className="text-muted icon-box"
                         >
                           <i className="r-icon-arrow-up2"></i>
@@ -86,11 +86,11 @@ const DataSet = () => {
                           <span className="badge badge-muted min-90 role-badge text-center">
                             DRAFT
                           </span>
-                          <Link href="javascript:void(0)" className="text-danger">
+                          <Link href="#" className="text-danger">
                             <i className="r-icon r-icon-delete  ml-2"></i>
                           </Link>
                         </span>
-                        <Link href="javascript:void(0)" className="text-muted">
+                        <Link href="#" className="text-muted">
                           <i className="r-icon-chevron-right"></i>
                         </Link>
                       </div>
@@ -105,7 +105,7 @@ const DataSet = () => {
                     <div className="col-12 col-md-6 px-0">
                       <div className="d-flex align-items-center">
                         <Link
-                          href="javascript:void(0)"
+                          href="#"
                           className="text-muted icon-box"
                         >
                           <i className="r-icon-arrow-up2"></i>
@@ -130,11 +130,11 @@ const DataSet = () => {
                           <span className="badge badge-muted min-90 role-badge text-center">
                             DRAFT
                           </span>
-                          <Link href="javascript:void(0)" className="text-danger">
+                          <Link href="#" className="text-danger">
                             <i className="r-icon r-icon-delete  ml-2"></i>
                           </Link>
                         </span>
-                        <Link href="javascript:void(0)" className="text-muted">
+                        <Link href="#" className="text-muted">
                           <i className="r-icon-chevron-right"></i>
                         </Link>
                       </div>
@@ -149,7 +149,7 @@ const DataSet = () => {
                     <div className="col-12 col-md-6 px-0">
                       <div className="d-flex align-items-center">
                         <Link
-                          href="javascript:void(0)"
+                          href="#"
                           className="text-muted icon-box"
                         >
                           <i className="r-icon-arrow-up2"></i>
@@ -174,11 +174,11 @@ const DataSet = () => {
                           <span className="badge badge-muted min-90 role-badge text-center">
                             DRAFT
                           </span>
-                          <Link href="javascript:void(0)" className="text-danger">
+                          <Link href="#" className="text-danger">
                             <i className="r-icon r-icon-delete  ml-2"></i>
                           </Link>
                         </span>
-                        <Link href="javascript:void(0)" className="text-muted">
+                        <Link href="#" className="text-muted">
                           <i className="r-icon-chevron-right"></i>
                         </Link>
                       </div>
@@ -192,7 +192,7 @@ const DataSet = () => {
                     <div className="col-12 col-md-6 px-0">
                       <div className="d-flex align-items-center">
                         <Link
-                          href="javascript:void(0)"
+                          href="#"
                           className="text-muted icon-box"
                         >
                           <i className="r-icon-arrow-up2"></i>
@@ -217,11 +217,11 @@ const DataSet = () => {
                           <span className="badge badge-muted min-90 role-badge text-center">
                             DRAFT
                           </span>
-                          <Link href="javascript:void(0)" className="text-danger">
+                          <Link href="#" className="text-danger">
                             <i className="r-icon r-icon-delete  ml-2"></i>
                           </Link>
                         </span>
-                        <Link href="javascript:void(0)" className="text-muted">
+                        <Link href="#" className="text-muted">
                           <i className="r-icon-chevron-right"></i>
                         </Link>
                       </div>
@@ -236,7 +236,7 @@ const DataSet = () => {
                     <div className="col-12 col-md-6 px-0">
                       <div className="d-flex align-items-center">
                         <Link
-                          href="javascript:void(0)"
+                          href="#"
                           className="text-muted icon-box"
                         >
                           <i className="r-icon-arrow-up2"></i>
@@ -261,11 +261,11 @@ const DataSet = () => {
                           <span className="badge badge-muted min-90 role-badge text-center">
                             DRAFT
                           </span>
-                          <Link href="javascript:void(0)" className="text-danger">
+                          <Link href="#" className="text-danger">
                             <i className="r-icon r-icon-delete  ml-2"></i>
                           </Link>
                         </span>
-                        <Link href="javascript:void(0)" className="text-muted">
+                        <Link href="#" className="text-muted">
                           <i className="r-icon-chevron-right"></i>
                         </Link>
                       </div>
@@ -280,7 +280,7 @@ const DataSet = () => {
                     <div className="col-12 col-md-6 px-0">
                       <div className="d-flex align-items-center">
                         <Link
-                          href="javascript:void(0)"
+                          href="#"
                           className="text-muted icon-box"
                         >
                           <i className="r-icon-arrow-up2"></i>
@@ -305,11 +305,11 @@ const DataSet = () => {
                           <span className="badge badge-muted min-90 role-badge text-center">
                             DRAFT
                           </span>
-                          <Link href="javascript:void(0)" className="text-danger">
+                          <Link href="#" className="text-danger">
                             <i className="r-icon r-icon-delete  ml-2"></i>
                           </Link>
                         </span>
-                        <Link href="javascript:void(0)" className="text-muted">
+                        <Link href="#" className="text-muted">
                           <i className="r-icon-chevron-right"></i>
                         </Link>
                       </div>
@@ -323,7 +323,7 @@ const DataSet = () => {
                     <div className="col-12 col-md-6 px-0">
                       <div className="d-flex align-items-center">
                         <Link
-                          href="javascript:void(0)"
+                          href="#"
                           className="text-muted icon-box"
                         >
                           <i className="r-icon-arrow-up2"></i>
@@ -348,11 +348,11 @@ const DataSet = () => {
                           <span className="badge badge-muted min-90 role-badge text-center">
                             DRAFT
                           </span>
-                          <Link href="javascript:void(0)" className="text-danger">
+                          <Link href="#" className="text-danger">
                             <i className="r-icon r-icon-delete  ml-2"></i>
                           </Link>
                         </span>
-                        <Link href="javascript:void(0)" className="text-muted">
+                        <Link href="#" className="text-muted">
                           <i className="r-icon-chevron-right"></i>
                         </Link>
                       </div>
@@ -367,7 +367,7 @@ const DataSet = () => {
                     <div className="col-12 col-md-6 px-0">
                       <div className="d-flex align-items-center">
                         <Link
-                          href="javascript:void(0)"
+                          href="#"
                           className="text-muted icon-box"
                         >
                           <i className="r-icon-arrow-up2"></i>
@@ -392,11 +392,11 @@ const DataSet = () => {
                           <span className="badge badge-muted min-90 role-badge text-center">
                             DRAFT
                           </span>
-                          <Link href="javascript:void(0)" className="text-danger">
+                          <Link href="#" className="text-danger">
                             <i className="r-icon r-icon-delete  ml-2"></i>
                           </Link>
                         </span>
-                        <Link href="javascript:void(0)" className="text-muted">
+                        <Link href="#" className="text-muted">
                           <i className="r-icon-chevron-right"></i>
                         </Link>
                       </div>
@@ -411,7 +411,7 @@ const DataSet = () => {
                     <div className="col-12 col-md-6 px-0">
                       <div className="d-flex align-items-center">
                         <Link
-                          href="javascript:void(0)"
+                          href="#"
                           className="text-muted icon-box"
                         >
                           <i className="r-icon-arrow-up2"></i>
@@ -436,11 +436,11 @@ const DataSet = () => {
                           <span className="badge badge-muted min-90 role-badge text-center">
                             DRAFT
                           </span>
-                          <Link href="javascript:void(0)" className="text-danger">
+                          <Link href="#" className="text-danger">
                             <i className="r-icon r-icon-delete  ml-2"></i>
                           </Link>
                         </span>
-                        <Link href="javascript:void(0)" className="text-muted">
+                        <Link href="#" className="text-muted">
                           <i className="r-icon-chevron-right"></i>
                         </Link>
                       </div>
@@ -454,7 +454,7 @@ const DataSet = () => {
                     <div className="col-12 col-md-6 px-0">
                       <div className="d-flex align-items-center">
                         <Link
-                          href="javascript:void(0)"
+                          href="#"
                           className="text-muted icon-box"
                         >
                           <i className="r-icon-arrow-up2"></i>
@@ -479,11 +479,11 @@ const DataSet = () => {
                           <span className="badge badge-muted min-90 role-badge text-center">
                             DRAFT
                           </span>
-                          <Link href="javascript:void(0)" className="text-danger">
+                          <Link href="#" className="text-danger">
                             <i className="r-icon r-icon-delete  ml-2"></i>
                           </Link>
                         </span>
-                        <Link href="javascript:void(0)" className="text-muted">
+                        <Link href="#" className="text-muted">
                           <i className="r-icon-chevron-right"></i>
                         </Link>
                       </div>
@@ -498,7 +498,7 @@ const DataSet = () => {
                     <div className="col-12 col-md-6 px-0">
                       <div className="d-flex align-items-center">
                         <Link
-                          href="javascript:void(0)"
+                          href="#"
                           className="text-muted icon-box"
                         >
                           <i className="r-icon-arrow-up2"></i>
@@ -523,11 +523,11 @@ const DataSet = () => {
                           <span className="badge badge-muted min-90 role-badge text-center">
                             DRAFT
                           </span>
-                          <Link href="javascript:void(0)" className="text-danger">
+                          <Link href="#" className="text-danger">
                             <i className="r-icon r-icon-delete  ml-2"></i>
                           </Link>
                         </span>
-                        <Link href="javascript:void(0)" className="text-muted">
+                        <Link href="#" className="text-muted">
                           <i className="r-icon-chevron-right"></i>
                         </Link>
                       </div>
@@ -542,7 +542,7 @@ const DataSet = () => {
                     <div className="col-12 col-md-6 px-0">
                       <div className="d-flex align-items-center">
                         <Link
-                          href="javascript:void(0)"
+                          href="#"
                           className="text-muted icon-box"
                         >
                           <i className="r-icon-arrow-up2"></i>
@@ -567,11 +567,11 @@ const DataSet = () => {
                           <span className="badge badge-muted min-90 role-badge text-center">
                             DRAFT
                           </span>
-                          <Link href="javascript:void(0)" className="text-danger">
+                          <Link href="#" className="text-danger">
                             <i className="r-icon r-icon-delete  ml-2"></i>
                           </Link>
                         </span>
-                        <Link href="javascript:void(0)" className="text-muted">
+                        <Link href="#" className="text-muted">
                           <i className="r-icon-chevron-right"></i>
                         </Link>
                       </div>
@@ -582,7 +582,7 @@ const DataSet = () => {
             </div>
             {/* <div className="d-flex justify-content-center">
               <Link
-                href="javascript:void(0)"
+                href="#"
                 className="btn mr-2 btn-primary min-width-150"
               >
                 Next
@@ -600,7 +600,7 @@ const DataSet = () => {
         <div className="col-12">
           <div className="d-flex justify-content-end">
             <Link
-              href="javascript:void(0)"
+              href="#"
               className="sidebar-toggler close-sidebar"
               onClick={handleOpenClick}
             >
@@ -624,7 +624,7 @@ const DataSet = () => {
             <p>Follow the guide on the right to set up your Source</p>
           </div>
           <Link
-            href="javascript:void(0)"
+            href="#"
             className="text-muted mb-3 d-flex justify-content-end align-items-center"
           >
             Draft Saved <i className="fa fa-share ml-2"></i>
@@ -633,7 +633,7 @@ const DataSet = () => {
             <i className="r-icon r-icon-info text-primary"></i> There are{" "}
             <strong>Prerequisites</strong>
             that you must ensure to set up this Source for your Pipeline.
-            <Link href="javascript:void(0)" className="text-primary">
+            <Link href="#" className="text-primary">
               Learn More<i className="r-icon r-icon-arrow-right2 ml-2"></i>{" "}
             </Link>
           </div>
@@ -837,12 +837,12 @@ const DataSet = () => {
           </div>
           <div className="d-flex justify-content-center my-3">
             <Link
-              href="javascript:void(0)"
+              href="#"
               className="btn-lg btn btn-muted btn-default mr-2"
             >
               TEST CONNECTION
             </Link>
-            <Link href="javascript:void(0)" className="btn-lg btn  btn-primary">
+            <Link href="#" className="btn-lg btn  btn-primary">
               TEST &amp; CONTINUE
             </Link>
           </div>

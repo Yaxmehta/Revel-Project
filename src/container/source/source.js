@@ -12,7 +12,7 @@ import Link from "next/link";
 const Source = () => {
   return (
     <>
-      <div className="wrapper">
+      <div className="wrapper app-header">
         <main className="main-content" id="main">
           <div className="container-fluid">
             <div className="row px-2">
@@ -44,13 +44,13 @@ const Source = () => {
               </div>
               <div className="col-12 col-md-6 text-right d-flex">
                 <Link
-                  href="javascript:void(0)"
+                  href="#"
                   className="btn btn-outline-light mr-2 ml-auto"
                 >
                   10 COLUMNS SELECTED OF 20
                 </Link>
                 <Link
-                  href="javascript:void(0)"
+                  href="#"
                   className="btn btn-outline-light mr-2"
                 >
                   CLEAR FILTERS
@@ -72,7 +72,7 @@ const Source = () => {
                     <div className="col-12 col-md-6 px-0">
                       <div className="d-flex align-items-center">
                         <Link
-                          href="javascript:void(0)"
+                          href="#"
                           className="text-muted icon-box"
                         >
                           <i className="r-icon-arrow-up2"></i>
@@ -97,11 +97,11 @@ const Source = () => {
                           <span className="badge badge-muted min-90 role-badge text-center">
                             DRAFT
                           </span>
-                          <Link href="javascript:void(0)" className="text-danger">
+                          <Link href="#" className="text-danger">
                             <i className="r-icon r-icon-delete  ml-2"></i>
                           </Link>
                         </span>
-                        <Link href="javascript:void(0)" className="text-muted">
+                        <Link href="#" className="text-muted">
                           <i className="r-icon-chevron-right"></i>
                         </Link>
                       </div>
@@ -123,7 +123,7 @@ const Source = () => {
                     <div className="col-12 col-md-6 px-0">
                       <div className="d-flex align-items-center">
                         <Link
-                          href="javascript:void(0)"
+                          href="#"
                           className="text-muted icon-box"
                         >
                           <i className="r-icon-arrow-up2"></i>
@@ -148,11 +148,11 @@ const Source = () => {
                           <span className="badge badge-muted min-90 role-badge text-center">
                             DRAFT
                           </span>
-                          <Link href="javascript:void(0)" className="text-danger">
+                          <Link href="#" className="text-danger">
                             <i className="r-icon r-icon-delete  ml-2"></i>
                           </Link>
                         </span>
-                        <Link href="javascript:void(0)" className="text-muted">
+                        <Link href="#" className="text-muted">
                           <i className="r-icon-chevron-right"></i>
                         </Link>
                       </div>
@@ -174,7 +174,7 @@ const Source = () => {
                     <div className="col-12 col-md-6 px-0">
                       <div className="d-flex align-items-center">
                         <Link
-                          href="javascript:void(0)"
+                          href="#"
                           className="text-muted icon-box"
                         >
                           <i className="r-icon-arrow-up2"></i>
@@ -201,11 +201,11 @@ const Source = () => {
                           <span className="badge badge-muted min-90 role-badge text-center">
                             DRAFT
                           </span>
-                          <Link href="javascript:void(0)" className="text-danger">
+                          <Link href="#" className="text-danger">
                             <i className="r-icon r-icon-delete  ml-2"></i>
                           </Link>
                         </span>
-                        <Link href="javascript:void(0)" className="text-muted">
+                        <Link href="#" className="text-muted">
                           <i className="r-icon-chevron-right"></i>
                         </Link>
                       </div>

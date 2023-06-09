@@ -28,26 +28,26 @@ export const HEADER_TITLE = {
 export const COMPONENT_TITLE = {
   "/dashboard": "Dashboard",
   //Tenants
-  "/tenants": "ManageTenants",
-  "/tenants/addTenant": "AddTenant",
+  "/tenants": "Manage Tenants",
+  "/tenants/addTenant": "Add Tenant",
   
   //Password
-  "/changePassword": "ChangePassword",
+  "/changePassword": "Change Password",
 
   //User
-  "/userProfile": "UserProfile",
-  "/user-list": "UserList",
+  "/userProfile": "User Profile",
+  "/user-list": "User List",
 
   //Source
   "/source": "Source",
-  "/source/addSource": "AddSource",
+  "/source/addSource": "Add Source",
 
   //Dataset
   "/dataset": "DataSet",
 
   //Role management
-  "/role": "RoleManagement",
-  "/role/add-role": "AddRole",
+  "/role": "Role Management",
+  "/role/add-role": "Add Role",
 };
 export const NAVBAR_TITLE = {
   HOME: "Home",

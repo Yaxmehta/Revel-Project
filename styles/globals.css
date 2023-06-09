@@ -105,3 +105,10 @@ a {
     color-scheme: dark;
   }
 }
+
+.pagination{
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+
+}

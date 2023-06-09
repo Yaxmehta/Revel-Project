@@ -1,12 +1,12 @@
-import { cancelIcon, BackArrowIcon, MongoDB_Icon } from "@/src/assets/img/icons";
+import {  BackArrowIcon, MongoDB_Icon, closeIcon } from "@/src/assets/img/icons";
 import { ROUTE_URL } from "@/src/constant/url";
 import Link from "next/link";
 import Image from "next/image";
 const Mongodb = () => {
   return (
     <>
-      <div className="wrapper login-page">
-        <nav className="navbar navbar-expand-lg brand-navbar bg-white brand-navbar breadcrumb-navbar top-0">
+      <div className="wrapper login-page app-header">
+        <nav className="navbar navbar-expand-lg brand-navbar bg-white menu-b-navbar brand-navbar breadcrumb-navbar top-0">
           <div className="container-fluid">
             <ol className="breadcrumb bg-white mb-0 p-0 align-items-center">
               <Link
@@ -25,7 +25,7 @@ const Mongodb = () => {
             <ol className="breadcrumb bg-white mb-0 p-0 align-items-center ml-auto">
               <Link href={ROUTE_URL.ADDSOURCE} className="sidebar-toggler" id="">
                 <Image
-                  src={cancelIcon}
+                  src={closeIcon}
                   alt="Back"
                   className="img-fluid"
                   width="15"
@@ -49,7 +49,7 @@ const Mongodb = () => {
                   <p>Follow the guide on the right to set up your Data Lake</p>
                 </div>
                 <a
-                  href="javascript:void(0)"
+                  href="#"
                   className="text-muted mb-3 d-flex justify-content-end align-items-center"
                 >
                   Draft Saved <i className="fa fa-share ml-2"></i>
@@ -316,7 +316,7 @@ const Mongodb = () => {
                 </div>
                 <div className="d-flex justify-content-center my-3">
                   <a
-                    href="javascript:void(0)"
+                    href="#"
                     className="btn-lg btn btn-muted btn-default mr-2"
                   >
                     TEST CONNECTION
@@ -402,7 +402,7 @@ const Mongodb = () => {
                   <div className="step">
                     <div>
                       <span className="badge badge-primary step-badge">Step 3</span>
-                      <label htmlFor="">Whitelist Hevo’s IP Addresses</label>
+                      <label htmlFor="">Whitelist Hevo's IP Addresses</label>
                     </div>
                     <p>
                       In order to allow Hevo to access your MongoDB databases,
