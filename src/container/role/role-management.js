@@ -5,10 +5,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Table } from "react-bootstrap";
+import { toast } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
 
 
 const Role_Management = () => {
   const [rolesData, setRolesData] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
 
   const FetchRoles = async () => {
     let token = "";
@@ -23,6 +26,7 @@ const Role_Management = () => {
         headers: {
           "Content-Type": "application/json",
           "Authorization": `Bearer ${token}`,
+          "Cache-Control": "no-cache",
           "Access-Control-Allow-Origin": "*",
           "Access-Control-Allow-Methods": ["GET", "POST", "PUT", "DELETE"]
 
@@ -40,6 +44,59 @@ const Role_Management = () => {
     FetchRoles();
   }, []);
 
+
+  const handleSearch = async () => {
+    let token = "";
+
+    const storedToken = localStorage.getItem("token");
+    if (storedToken !== 'undefined') {
+      token = JSON.parse(storedToken);
+    }
+    
+    try {
+      const response = await axios.post("http://master.revel-dev.test:9876/role/v1/search",{
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${token}`,
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Methods": ["GET", "POST", "PUT", "DELETE"]
+
+        }
+      });
+      
+      setRolesData(response.data);
+      console.log("search:",response)
+    } catch (error) {
+      console.error('Error searching:', error);
+    }
+  };
+
+
+  const handleRolesDelete = async (id) => {
+    let token = "";
+    const storedToken = localStorage.getItem("token");
+    if (storedToken !== 'undefined') {
+      token = JSON.parse(storedToken);
+    }
+    else {
+      router.push("http://master.revel-yax.test:3000");
+    }
+    try {
+      await axios.put(`http://master.revel-dev.test:9876/role/v1/delete/${id}`, "", {
+       headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${token}`,
+          "Accept": "*/*",
+          "Cache-Control": "no-cache",
+          "Accept-Encoding": "gzip, deflate, br"
+        }
+      });
+      setRolesData(rolesData.filter((item) => item.id !== id));
+      toast.success('Item deleted successfully.');
+    } catch (error) {
+      toast.error('Error deleting item:', error);
+    }
+  };
 
   return (
     <>
@@ -92,8 +149,10 @@ const Role_Management = () => {
                     type="text"
                     className="form-control"
                     placeholder="Search user"
+                    value={searchTerm}
+                    onChange={(e)=> setSearchTerm(e.target.value)}
                   />
-                  <i className="fa fa-search"></i>
+                  <i className="fa fa-search" onClick={handleSearch}></i>
                 </div>
               </div>
             </div>
@@ -118,20 +177,20 @@ const Role_Management = () => {
                     <th>
                       Role Name
                       <span className="text-right float-right">
-                        <i class="r-icon r-icon-filter text-muted"></i>
+                        <i className="r-icon r-icon-filter text-muted"></i>
                       </span>
                     </th>
 
                     <th>
                       Created
                       <span className="text-right float-right">
-                        <i class="r-icon r-icon-filter text-muted"></i>
+                        <i className="r-icon r-icon-filter text-muted"></i>
                       </span>
                     </th>
                     <th>
                       Last Activity
                       <span className="text-right float-right">
-                        <i class="r-icon r-icon-filter text-muted"></i>
+                        <i className="r-icon r-icon-filter text-muted"></i>
                       </span>
                     </th>
                     <th className="text-center">Action</th>
@@ -162,7 +221,7 @@ const Role_Management = () => {
                               <Link href="#" className="text-info">
                                 <i className="r-icon r-icon-pencil"></i>
                               </Link>
-                              <Link href="#" className="text-danger">
+                              <Link href="#" className="text-danger" onClick={()=>handleRolesDelete(roles.id)}>
                                 <i className="r-icon r-icon-delete"></i>
                               </Link>
                             </div>

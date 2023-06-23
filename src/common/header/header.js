@@ -2,11 +2,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { Revel, userplaceholder } from "@/src/assets/img";
 import { searchIcon, Bars } from "@/src/assets/img/icons";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import SideBar from "../sidebar/sidebar";
 import { useRouter } from "next/router";
 import { COMPONENT_TITLE } from "@/src/constant/titles";
 import { ROUTE_URL } from "@/src/constant/url";
+
 
 const Header = (props) => {
   const { title } = props;
@@ -27,16 +28,23 @@ const Header = (props) => {
   const searchClick = () => {
     setToggle(!toggle);
   };
+  // useEffect(()=>{
+  //   console.log("Header Loaded");
+  // })
+
 
   const handleLogout = (e) => {
     e.preventDefault();
     // Perform logout logic, such as clearing authentication token or user data
     // ...
     localStorage.removeItem('token');
+    localStorage.clear();
 
     // Redirect the user to the login or logout page
     router.push("http://master.revel-yax.test:3000"); // Replace with your desired logout or login page URL
   };
+
+  
   
   return (
     <>

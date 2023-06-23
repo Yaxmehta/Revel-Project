@@ -1,4 +1,39 @@
-const UserForm = () => {
+import React, { useState } from 'react';
+
+const UserForm = ({addUser}) => {
+  const [user, setUser] = useState({
+    name: '',
+    email: '',
+    roleId: '',
+    city: '',
+    state: '',
+    zipcode: '',
+    addressLine1: '',
+    addressLine2: ''
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setUser((prevUser) => ({
+      ...prevUser,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    addUser(user);
+    setUser({
+      name: '',
+      email: '',
+      roleId: '',
+      city: '',
+      state: '',
+      zipcode: '',
+      addressLine1: '',
+      addressLine2: ''
+    });
+  };
   return (
     <>
       <div
@@ -16,6 +51,8 @@ const UserForm = () => {
                 className="form-control"
                 id="formGroupExampleInput"
                 placeholder="Name"
+                value={user.name}
+                onChange={handleChange}
               />
             </div>
             <div className="mb-3 col-md-6">
@@ -26,7 +63,9 @@ const UserForm = () => {
                 type="text"
                 className="form-control"
                 id="formGroupExampleInput"
-                placeholder="Email "
+                placeholder="Email"
+                value={user.email}
+                onChange={handleChange}
               />
             </div>
             <div className="mb-3 col-md-6">
@@ -47,7 +86,9 @@ const UserForm = () => {
                 type="text"
                 className="form-control"
                 id="formGroupExampleInput"
-                placeholder="City "
+                placeholder="City"
+                value={user.city}
+                onChange={handleChange}
               />
             </div>
             <div className="mb-3 col-md-6">
@@ -58,7 +99,9 @@ const UserForm = () => {
                 type="text"
                 className="form-control"
                 id="formGroupExampleInput"
-                placeholder="State "
+                placeholder="State"
+                value={user.state}
+                onChange={handleChange}
               />
             </div>
             <div className="mb-3 col-md-6">
@@ -69,7 +112,9 @@ const UserForm = () => {
                 type="text"
                 className="form-control"
                 id="formGroupExampleInput"
-                placeholder="Zip Code "
+                placeholder="Zip Code"
+                value={user.zipcode}
+                onChange={handleChange}
               />
             </div>
 
@@ -81,6 +126,8 @@ const UserForm = () => {
                 className=" form-control"
                 id="textarea"
                 rows="3"
+                value={user.addressLine1}
+                onChange={handleChange}
               ></textarea>
             </div>
             <div className="mb-3 col-md-6">
@@ -91,6 +138,8 @@ const UserForm = () => {
                 className=" form-control"
                 id="textarea"
                 rows="3"
+                value={user.addressLine2}
+                onChange={handleChange}
               ></textarea>
             </div>
           </div>

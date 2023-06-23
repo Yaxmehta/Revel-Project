@@ -1,71 +1,56 @@
 import Image from "next/image";
 import Link from "next/link";
 import { No_User } from "../../assets/img";
-// import { quotoneIcon, rydotIcon } from "../../assets/img/icons";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { ROUTE_URL } from "@/src/constant/url";
 import axios from "axios";
-// import readdata from "@/public/alltenants.json";
 import { toast } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
-import CustomDelete from "@/src/common/customdelete.js";
+
 import { useRouter } from "next/router";
 
 
 const ManageTenants = () => {
+
   const [tenantData, setTenantData] = useState([]);
   const [visible, setVisible] = useState(3);
-  const [deleteRecord, setDeleteRecord] = useState([]);
-  const router= useRouter();
+  // const [deleteRecord, setDeleteRecord] = useState([]);
+  const router = useRouter();
 
   const showmoreitem = () => {
     setVisible((predata) => predata + 8);
   };
 
+  const getAllTenants = async () => {
+    let token = "";
+    const storedToken = localStorage.getItem("token");
+    if (storedToken !== 'undefined') {
+      token = JSON.parse(storedToken);
+    }
+    else {
+      router.push("http://master.revel-yax.test:3000");
+    }
+
+    try {
+      const response = await axios.get("http://master.revel-dev.test:9876/tenant/v1/getAll", {
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${token}`,
+          "Accept": "*/*",
+          "Cache-Control": "no-cache",
+          "Accept-Encoding": "gzip, deflate, br"
+        }
+      });
+
+      setTenantData(response.data.data);
+      console.log(response.data)
+    } catch (error) {
+      console.log('Error fetching tenants:', error);
+    }
+  };
+
+
   useEffect(() => {
-    const getAllTenants = async () => {
-      let token = "";
-
-      const storedToken = localStorage.getItem("token");
-      // debugger
-      if (storedToken !== 'undefined') {
-        token = JSON.parse(storedToken);
-
-        //  token = JSON.parse(localStorage.getItem("token"));
-      }
-      else{
-        router.push("http://master.revel-yax.test:3000");
-      }
-      // const token =JSON.parse(localStorage.getItem("token"));
-      try {
-        // const response = await axios.get("http://master.revel-dev.test:9876/tenant/v1/getAll", {
-        //   headers: {
-        //     "Content-Type": "application/json",
-        //     "Authorization": `bearer ${token}`,
-        //   }
-        // });
-        
-        // setTenantData(response.data.data);
-        // console.log(response.data)
-
-        const response = await fetch("http://master.revel-dev.test:9876/tenant/v1/getAll",{
-          method: "GET",
-          headers: {
-                "Content-Type": "application/json",
-                "Authorization": `Bearer ${token}`,
-                "Accept":  "*/*",
-               "Cache-Control": "no-cache",
-               "Accept-Encoding": "gzip, deflate, br"
-              }
-        });
-        // debugger
-        const jsonData = await response.json();
-        setTenantData(jsonData.data)
-        console.log(jsonData.data);
-      } catch (error) {
-        console.log('Error fetching tenants:', error);
-      }
-    };
 
     getAllTenants();
   }, []);
@@ -80,12 +65,39 @@ const ManageTenants = () => {
   //   toast.error("tenant user deleted successfully");
   // }
 
-  const deleteTenantRecord = (id) => {
-    const url = "http://master.revel-dev.test:9876/tenant/v1/delete";
-    const params = { id: id }
+  // const deleteTenantRecord = (id) => {
 
-    CustomDelete(url, params);
-  }
+
+  //   const url = `http://master.revel-dev.test:9876/tenant/v1/delete/${id}`;
+  //   CustomDelete(url);
+  // }
+
+  const handleTenantDelete = async (id) => {
+    let token = "";
+    const storedToken = localStorage.getItem("token");
+    if (storedToken !== 'undefined') {
+      token = JSON.parse(storedToken);
+    }
+    else {
+      router.push("http://master.revel-yax.test:3000");
+    }
+    try {
+      await axios.put(`http://master.revel-dev.test:9876/tenant/v1/delete/${id}`, "", {
+       headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${token}`,
+          "Accept": "*/*",
+          "Cache-Control": "no-cache",
+          "Accept-Encoding": "gzip, deflate, br"
+        }
+      });
+      setTenantData(tenantData.filter((item) => item.id !== id));
+      toast.success("tenant user deleted successfully");
+    } catch (error) {
+      toast.error('Error deleting item:', error);
+    }
+  };
+
 
   const hasRecords = tenantData && tenantData.length > visible;
 
@@ -105,7 +117,7 @@ const ManageTenants = () => {
                       </p>
                     </div>
                     <div className="row data-lake-cards tenants">
-                      {tenantData?.slice(0,visible).map((items) => {
+                      {tenantData?.slice(0, visible).map((items) => {
                         return (
                           <>
                             <div className="col-12 col-md-3 mb-4">
@@ -113,7 +125,7 @@ const ManageTenants = () => {
                                 <Link href="#" >
                                   <div className="icon-box">
                                     <Image
-                                      src={items?.logo?.logoUrl?items.logo.logoUrl:No_User}
+                                      src={items?.logo?.logoUrl ? items.logo.logoUrl : No_User}
                                       alt=""
                                       className="img-fluid mx-auto"
                                       width={100}
@@ -134,10 +146,10 @@ const ManageTenants = () => {
                                       </Link>
                                     </li>
                                     <li>
-                                      <Link 
+                                      <Link
                                         href="#"
                                         className="text-danger"
-                                        onClick={() => deleteTenantRecord(items.id)}
+                                        onClick={() => handleTenantDelete(items.id)}
                                       >
                                         <i className="r-icon r-icon-delete"></i>
                                       </Link>
@@ -167,13 +179,13 @@ const ManageTenants = () => {
                       <div className="d-flex justify-content-center my-3">
                         {hasRecords && (
                           <button
-                          className="btn btn-success btn-lg min-width-150"
-                          onClick={showmoreitem}
-                        >
-                          Load More
-                        </button>
+                            className="btn btn-success btn-lg min-width-150"
+                            onClick={showmoreitem}
+                          >
+                            Load More
+                          </button>
                         )}
-                        
+
                       </div>
                     </div>
                   </div>

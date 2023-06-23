@@ -15,115 +15,14 @@ import { toast } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 
+
 const UserList = () => {
   const [show, setShow] = useState(false);
-  // const [currentPage, setCurrentPage] = useState(1);
-  // const [filteredUsers, setFilteredUsers] = useState([]);
-  // const [searchTerm, setSearchTerm] = useState("");
-
-
-  // const handlePagination = (page) => {
-  //   setCurrentPage(page);
-  // };
-
-
-  // const handleSearch = (event) => {
-  //   const term = event.target.value;
-  //   setSearchTerm(term);
-
-  //   const filteredData = userdata[0].data.filter((user) =>
-  //     user.name.toLowerCase().includes(term.toLowerCase())
-  //   );
-  //   setFilteredUsers(filteredData);
-  //   setCurrentPage(1);
-
-  //   const message = filteredUsers ? `${filteredData.length} record (s) found` : 'No record match found';
-  //   const toastId = "record message";
-  //   toast.success(message, { toastId })
-  // };
+  const [users, setUsers] = useState([]);
 
   const ToggleClick = () => {
     setShow(!show);
   };
-
-
-  // const itemsPerPage = 10;
-  // const users = searchTerm ? filteredUsers : userdata[0].data;
-  // const totalUsers = users.length;
-  // const totalPages = Math.ceil(totalUsers / itemsPerPage);
-  // const startIndex = (currentPage - 1) * itemsPerPage;
-  // const endIndex = startIndex + itemsPerPage;
-  // const paginatedUsers = users.slice(startIndex, endIndex);
-  // const pageNumbers = [...Array(totalPages + 1).keys()].slice(1);
-
-  // function handlePreviousPage() {
-  //   if (currentPage !== 1) {
-  //     setCurrentPage(currentPage - 1);
-  //   }
-
-  // }
-
-  // function handleNextPage() {
-  //   if (currentPage !== totalPages) {
-  //     setCurrentPage(currentPage + 1);
-  //   }
-
-  // }
-
-  // const handleDelete = (id) => {
-  //   const index = userdata[0].data.findIndex((record) => record.id === id);
-  //   if (index !== -1) {
-  //     const deletedRecord = userdata[0].data[index];
-  //     userdata[0].data.splice(index, 1);
-  //     setFilteredUsers(deletedRecord)
-  //   }
-  //   const toastId = "delete message";
-  //   toast.error("user deleted successfully", { toastId });
-  //   return null;
-
-  // };
-
-  const [users, setUsers] = useState([]);
-  // const [totalPages, setTotalPages] = useState(0);
-
-  // const fetchUsers = async (page = 1) => {
-  //   let token = "";
-  //   if (typeof window !== "undefined") {
-  //     token = JSON.parse(localStorage.getItem("token"));
-  //   }
-  //   try {
-  //     const response = await axios.get('http://master.revel-dev.test:9876/user/v1/getAll', {
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //         "Authorization": `bearer ${token}`,
-  //         "Access-Control-Allow-Origin": "*",
-  //         "Access-Control-Allow-Methods": ["GET", "POST", "PUT", "DELETE"]
-
-  //       }
-  //     });
-
-
-  //     setUsers(response.data.data);
-  //     console.log(response.data)
-  //     setCurrentPage(response.currentPage);
-  //     setTotalPages(response.totalPages);
-  //   } catch (error) {
-  //     console.error('Error fetching users:', error);
-  //   }
-  // };
-
-  // const handleSearch = (event) => {
-  
-  //   setSearchTerm(event.target.value);
-
-  //   fetchUsers();
-  // };
-
-
-
-  // const handlePagination = (page) => {
-  //   fetchUsers(page);
-  // };
 
   const fetchUsers = async () => {
     let token = "";
@@ -149,20 +48,66 @@ const UserList = () => {
     }
   };
 
-
-
   useEffect(() => {
-    
-
     fetchUsers();
   }, []);
+  {/* ------------------------- Delete START ----------------------------------  */ }
+  const handleUserDelete = async (id) => {
+    let token = "";
+    const storedToken = localStorage.getItem("token");
+    if (storedToken !== 'undefined') {
+      token = JSON.parse(storedToken);
+    }
+    else {
+      router.push("http://master.revel-yax.test:3000");
+    }
+    try {
+      await axios.put(`http://master.revel-dev.test:9876/user/v1/delete/${id}`, "", {
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${token}`,
+          "Accept": "*/*",
+          "Cache-Control": "no-cache",
+          "Accept-Encoding": "gzip, deflate, br"
+        }
+      });
+      setUsers(users.filter((item) => item.id !== id));
+      console.log('Item deleted successfully.');
+    } catch (error) {
+      console.error('Error deleting item:', error);
+    }
+  };
+  {/* ------------------------- Delete END ----------------------------------  */ }
 
-  const deleteUserRecord = (id) => {
-    const url = "http://master.revel-dev.test:9876/user/v1/delete";
-    const params = { id: id }
-
-    CustomDelete(url, params);
+  {/* ------------------------- ADDUser START ----------------------------------  */ }
+  const addUser = (user) => {
+    let token = "";
+    const storedToken = localStorage.getItem("token");
+    if (storedToken !== 'undefined') {
+      token = JSON.parse(storedToken);
+    }
+    else {
+      router.push("http://master.revel-yax.test:3000");
+    }
+    try {
+     const response= axios.post('http://master.revel-dev.test:9876/user/v1/add', user, {
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${token}`,
+          "Accept": "*/*",
+          "Cache-Control": "no-cache",
+          "Accept-Encoding": "gzip, deflate, br"
+        }
+      })
+        setUsers(response);
+        console.log(response)
+    }
+    catch (error) {
+      console.error('Error adding user:', error);
+    }
   }
+
+  {/* ------------------------- ADDUser END ----------------------------------  */ }
 
   return (
     <>
@@ -259,8 +204,6 @@ const UserList = () => {
                     type="text"
                     className="form-control"
                     placeholder="Search user"
-                  // value={searchTerm}
-                  // onChange={handleSearch}
                   />
                   <i className="fa fa-search"></i>
                 </div>
@@ -344,9 +287,8 @@ const UserList = () => {
                               <Link
                                 href="#"
                                 className="text-danger"
-                                onClick={() => deleteUserRecord(user.id)}
+                                onClick={() => handleUserDelete(user.id)}
                               >
-
                                 <i className="r-icon r-icon-delete" ></i>
                               </Link>
 
@@ -389,10 +331,10 @@ const UserList = () => {
               style={{ filter: " grayscale(1);" }}
               onClick={ToggleClick}
             />
-            {/* <CloseButton aria-label="Hide" onClick={ToggleClick} variant="white"/> */}
+
           </Modal.Header>
           <Modal.Body>
-            <UserForm />
+            <UserForm addUser={addUser} />
           </Modal.Body>
           <Modal.Footer>
             <Button
